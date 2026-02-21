@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradAssist Official BD | Premier Academic Support</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        :root {
+            --navy: #0f172a;
+            --gold: #d4af37;
+            --accent: #3b82f6;
+            --soft-bg: #f8fafc;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: var(--navy);
+            background-color: var(--soft-bg);
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            backdrop-filter: blur(15px);
+            background: rgba(255,255,255,0.9);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+        
+        /* Text Logo from image_c30867.png */
+        .navbar-brand { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            letter-spacing: -1px; 
+            color: var(--navy) !important;
+        }
+
+        .nav-link { font-weight: 600; color: var(--navy) !important; margin: 0 15px; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent) !important; }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 80% 20%, #eff6ff 0%, #f8fafc 100%);
+        }
+        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; letter-spacing: -2px; }
+        
+        .hero-img {
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            object-fit: cover;
+            height: 500px;
+        }
+
+        /* --- Services & About Sections --- */
+        .section-padding { padding: 100px 0; }
+        .section-title { font-weight: 800; font-size: 2.5rem; margin-bottom: 40px; }
+        
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--accent); }
+        .service-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+
+        .about-box {
+            background: var(--navy);
+            color: white;
+            padding: 4rem;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- AI CHAT WIDGET --- */
+        #chat-widget-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .chat-trigger {
+            width: 60px; height: 60px; background: var(--navy); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; cursor: pointer; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+        }
+        .chat-window {
+            width: 380px; height: 550px; background: white; border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.2); display: none; flex-direction: column;
+            overflow: hidden; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05);
+            animation: slideUp 0.3s ease-out;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } }
+        .chat-header { background: var(--navy); color: white; padding: 15px 20px; }
+        #chat-messages { flex-grow: 1; overflow-y: auto; padding: 20px; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; }
+        .msg { padding: 10px 15px; border-radius: 14px; font-size: 0.88rem; max-width: 85%; }
+        .ai-msg { background: #f1f5f9; align-self: flex-start; }
+        .user-msg { background: var(--accent); color: white; align-self: flex-end; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GRADASSIST.</a>
+            
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/GradAssistOfficialBD/" class="btn px-4 py-2 ms-3 rounded-pill" style="background: var(--gold); color: white; font-weight: 600; border:none;">
+                            Visit Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="mb-4">Strategize Your <span style="color:var(--accent)">PhD & MS</span> Journey.</h1>
+                    <p class="mb-5 lead text-muted">Affordable academic excellence guided by researchers, for the next generation of global scholars.</p>
+                    <button class="btn btn-dark btn-lg px-5 py-3 rounded-pill" onclick="toggleChat()">Consult AI Counselor</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" class="img-fluid hero-img w-100" alt="Study Abroad Support">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">Elite Academic Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-journal-text"></i></div>
+                        <h5>Research Proposal Guidance</h5>
+                        <p class="text-muted small">Structured support in developing clear, focused, and competitive research proposals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-file-earmark-person"></i></div>
+                        <h5>Academic CV Development</h5>
+                        <p class="text-muted small">Professional structuring and formatting of academic CVs tailored for MS and PhD applications.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-award"></i></div>
+                        <h5>Scholarship Documentation</h5>
+                        <p class="text-muted small">Assistance with preparing scholarship documents aligned with eligibility and selection criteria.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-compass"></i></div>
+                        <h5>MS & PhD Application Strategy</h5>
+                        <p class="text-muted small">Personalized guidance on program selection, professor outreach, and application planning.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-pen"></i></div>
+                        <h5>SOP Structuring & Editing</h5>
+                        <p class="text-muted small">Strategic development and refinement of Statements of Purpose for strong academic impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-box">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="fw-800 mb-4">Founded by PhD Researchers</h2>
+                        <p class="lead">GradAssist provides affordable academic support for students pursuing higher studies abroad. Founded by PhD researchers in South Korea, we help applicants develop strong CVs, SOPs, and research proposals with clarity and strategy.</p>
+                    </div>
+                    <div class="col-lg-5 text-center">
+                        <i class="bi bi-quote display-1" style="color: var(--gold); opacity: 0.5;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="chat-widget-container">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header d-flex justify-content-between align-items-center">
+                <div class="fw-bold">GradAssist AI Concierge</div>
+                <i class="bi bi-x-lg" style="cursor: pointer;" onclick="toggleChat()"></i>
+            </div>
+            <div id="chat-messages">
+                <div class="msg ai-msg">Welcome! I'm trained on GradAssist's PhD-led methodology. How can I help with your application today?</div>
+            </div>
+            <div class="p-3 border-top bg-white">
+                <div class="input-group">
+                    <input type="text" id="chatInput" class="form-control border-0 bg-light" placeholder="Ask about CVs or SOPs...">
+                    <button class="btn btn-primary" onclick="sendMessage()"><i class="bi bi-send"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="chat-trigger" onclick="toggleChat()">
+            <i class="bi bi-robot"></i>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            input.value = '';
+
+            // Configuration for your Open WebUI
+            const API_URL = 'YOUR_BACKEND_URL/api/chat/completions';
+            const API_KEY = 'YOUR_API_KEY';
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
+                    body: JSON.stringify({
+                        model: 'llama3', 
+                        messages: [{ role: 'user', content: text }]
+                    })
+                });
+                const data = await response.json();
+                addMessage(data.choices[0].message.content, 'ai');
+            } catch (e) {
+                addMessage("Connecting to our researcher-led AI... please ensure your server is active.", 'ai');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = `msg ${sender}-msg`;
+            div.innerHTML = marked.parse(text);
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
+    </script>
+</body>
+</html>
