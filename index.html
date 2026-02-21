@@ -12,183 +12,168 @@
 
     <style>
         :root {
-            --brand-red: #a32a29; /* Matches logo burgundy */
-            --brand-navy: #1a365d; /* Matches logo blue base */
-            --brand-green: #2d6a4f; /* Matches logo growth arrow */
-            --brand-gold: #c5a059;
-            --soft-cream: #fdfcfb;
-            --text-dark: #0f172a;
+            --brand-red: #A32A29;    /* Burgundy from logo */
+            --brand-navy: #1D3557;   /* Deep Navy from logo */
+            --brand-green: #2D6A4F;  /* Forest Green from logo tagline */
+            --soft-bg: #FDFCFB;
+            --text-main: #1A1A1A;
         }
 
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            color: var(--text-dark);
-            background-color: var(--soft-cream);
+            color: var(--text-main);
+            background-color: var(--soft-bg);
             scroll-behavior: smooth;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* --- Refined Navigation --- */
+        /* --- Expert Navigation --- */
         .navbar {
             backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid rgba(163, 42, 41, 0.1);
-            padding: 0.75rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1.2rem 0;
         }
         
-        .navbar-brand img {
-            height: 55px; /* Scale logo appropriately */
-            transition: transform 0.3s ease;
+        /* CSS-Based Logo to replace broken image */
+        .brand-container { line-height: 1; }
+        .brand-text { 
+            font-weight: 800; 
+            font-size: 1.6rem; 
+            color: var(--brand-red); 
+            letter-spacing: -0.5px;
+            display: block;
+        }
+        .brand-tagline { 
+            font-size: 0.55rem; 
+            font-weight: 700; 
+            color: var(--brand-green); 
+            text-transform: uppercase; 
+            letter-spacing: 1.2px;
+            display: block;
+            margin-top: 2px;
         }
 
         .nav-link { 
-            font-weight: 600; 
+            font-weight: 700; 
             color: var(--brand-navy) !important; 
-            margin: 0 12px; 
-            font-size: 0.9rem; 
+            margin: 0 15px; 
+            font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
-        .nav-link:hover { color: var(--brand-red) !important; }
 
-        /* --- Premium Hero Section --- */
+        /* --- Sophisticated Hero --- */
         .hero {
             padding: 180px 0 120px;
             background: linear-gradient(135deg, #fff 0%, #f1f5f9 100%);
-            position: relative;
-            overflow: hidden;
         }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -10%; right: -10%;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(163, 42, 41, 0.05) 0%, transparent 70%);
-        }
-
         .hero h1 { 
-            font-size: 4.5rem; 
+            font-size: 4.2rem; 
             font-weight: 800; 
             line-height: 1.05; 
-            letter-spacing: -3px; 
             color: var(--brand-navy);
+            letter-spacing: -2px;
         }
 
-        .hero-accent { color: var(--brand-red); }
-
-        .hero-img-container {
+        .hero-img-box {
             position: relative;
-            padding: 20px;
+            padding: 15px;
         }
-
+        .hero-img-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 2px solid var(--brand-red);
+            border-radius: 30px;
+            transform: translate(15px, 15px);
+            z-index: 0;
+        }
         .hero-img {
-            border-radius: 40px 4px 40px 4px;
-            box-shadow: 30px 30px 0px var(--brand-red);
-            object-fit: cover;
-            height: 550px;
+            border-radius: 25px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* --- Content Sections --- */
+        /* --- Section Styling --- */
         .section-padding { padding: 120px 0; }
-        
-        .section-label {
-            color: var(--brand-red);
-            font-weight: 700;
-            text-transform: uppercase;
+        .label-accent { 
+            color: var(--brand-red); 
+            font-weight: 800; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
             letter-spacing: 2px;
-            font-size: 0.8rem;
             display: block;
             margin-bottom: 1rem;
         }
+        .section-title { font-weight: 800; font-size: 2.8rem; color: var(--brand-navy); margin-bottom: 30px; }
 
-        .section-title { font-weight: 800; font-size: 3rem; margin-bottom: 50px; color: var(--brand-navy); }
-
-        /* --- About Section (The "Researcher" Hook) --- */
-        .about-card {
+        /* --- Premium About Card --- */
+        .about-surface {
             background: white;
-            border-radius: 30px;
-            padding: 4rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+            border-radius: 40px;
+            padding: 5rem;
+            box-shadow: 0 40px 100px rgba(29, 53, 87, 0.05);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .stat-badge {
-            background: var(--brand-red);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- Services Grid --- */
+        /* --- Elevated Services Grid --- */
         .service-card {
-            background: #fff;
-            border-radius: 20px;
+            background: white;
+            border-radius: 24px;
             padding: 3rem 2rem;
             height: 100%;
-            border-bottom: 4px solid transparent;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f1f5f9;
         }
-
-        .service-card:hover {
-            transform: translateY(-12px);
-            border-bottom: 4px solid var(--brand-red);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        .service-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+            border-color: var(--brand-red);
         }
-
         .service-icon { 
-            width: 60px; height: 60px; 
-            background: rgba(163, 42, 41, 0.1); 
+            width: 50px; height: 50px; 
+            background: rgba(163, 42, 41, 0.05); 
             color: var(--brand-red);
             display: flex; align-items: center; justify-content: center;
-            border-radius: 15px; font-size: 1.8rem; margin-bottom: 1.5rem;
+            border-radius: 12px; font-size: 1.5rem; margin-bottom: 1.5rem;
         }
 
-        /* --- AI Concierge UI --- */
-        #chat-widget-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
-        
+        /* --- AI Concierge Professional UI --- */
+        #chat-widget-container { position: fixed; bottom: 40px; right: 40px; z-index: 1000; }
         .chat-trigger {
-            width: 70px; height: 70px; background: var(--brand-navy); color: white;
-            border-radius: 24px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; cursor: pointer; transition: all 0.3s;
-            box-shadow: 0 15px 35px rgba(26, 54, 93, 0.4);
+            width: 65px; height: 65px; background: var(--brand-navy); color: white;
+            border-radius: 22px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; cursor: pointer; transition: 0.3s;
+            box-shadow: 0 15px 30px rgba(29, 53, 87, 0.3);
         }
-        .chat-trigger:hover { transform: scale(1.05) rotate(5deg); background: var(--brand-red); }
+        .chat-trigger:hover { transform: scale(1.05); background: var(--brand-red); }
 
         .chat-window {
-            width: 400px; height: 600px; background: white; border-radius: 28px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.15); display: none; flex-direction: column;
+            width: 400px; height: 600px; background: white; border-radius: 30px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.15); display: none; flex-direction: column;
             overflow: hidden; margin-bottom: 25px; border: 1px solid rgba(0,0,0,0.08);
         }
-        
         .chat-header { 
             background: var(--brand-navy); color: white; padding: 25px; 
-            background-image: linear-gradient(45deg, var(--brand-navy), #2a4365);
+            border-bottom: 4px solid var(--brand-red);
         }
-
-        .ai-msg { background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; }
+        #chat-messages { flex-grow: 1; overflow-y: auto; padding: 25px; background: #fafafa; display: flex; flex-direction: column; gap: 15px; }
+        .msg { padding: 12px 18px; border-radius: 18px; font-size: 0.9rem; max-width: 85%; line-height: 1.5; }
+        .ai-msg { background: white; color: var(--brand-navy); border: 1px solid #eee; align-self: flex-start; }
         .user-msg { background: var(--brand-red); color: white; align-self: flex-end; }
 
         .btn-brand {
             background: var(--brand-red);
             color: white;
-            font-weight: 700;
-            padding: 16px 35px;
+            padding: 14px 32px;
             border-radius: 14px;
-            transition: all 0.3s;
+            font-weight: 700;
             border: none;
+            transition: 0.3s;
         }
-        .btn-brand:hover {
-            background: var(--brand-navy);
-            color: white;
-            transform: translateY(-2px);
-        }
+        .btn-brand:hover { background: var(--brand-navy); color: white; transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -196,16 +181,19 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logo.jpg" alt="GradAssist">
+                <div class="brand-container">
+                    <span class="brand-text">GradAssist</span>
+                    <span class="brand-tagline">Strategic Academic & Research Advisory</span>
+                </div>
             </a>
             
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">The Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Our Methodology</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Advisory Areas</a></li>
                     <li>
-                        <a href="https://www.facebook.com/GradAssistOfficialBD/" class="btn btn-brand py-2 ms-3">
-                            Connect Now
+                        <a href="https://www.facebook.com/GradAssistOfficialBD/" class="btn btn-brand ms-3">
+                            Consult Now
                         </a>
                     </li>
                 </ul>
@@ -217,36 +205,36 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <span class="section-label">PhD-Led Academic Consultancy</span>
-                    <h1>Navigate Your <span class="hero-accent">Global Research</span> Career.</h1>
-                    <p class="my-5 lead text-muted">Strategic guidance for MS and PhD applicants, mentored by established researchers in South Korea. We transform potential into high-impact academic profiles.</p>
+                    <span class="label-accent">PhD-Led Consultancy</span>
+                    <h1>Empowering the <br><span style="color:var(--brand-red)">Next Generation</span> of Scholars.</h1>
+                    <p class="my-5 lead text-muted">Navigate the complexities of global MS & PhD admissions with strategic mentorship from established researchers in South Korea.</p>
                     <div class="d-flex gap-3">
-                        <button class="btn btn-brand" onclick="toggleChat()">Consult AI Counselor</button>
-                        <a href="#services" class="btn btn-outline-dark btn-lg px-4 py-3 rounded-3" style="font-weight: 600;">View Services</a>
+                        <button class="btn btn-brand btn-lg" onclick="toggleChat()">Consult AI Counselor</button>
+                        <a href="#services" class="btn btn-outline-dark btn-lg rounded-4 px-4">View Services</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="hero-img-container">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" class="img-fluid hero-img w-100" alt="Academic Success">
+                    <div class="hero-img-box">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000" class="img-fluid hero-img w-100" alt="Academic Advisory">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section-padding" style="background: #fff;">
+    <section id="about" class="section-padding">
         <div class="container">
-            <div class="about-card">
+            <div class="about-surface">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
-                        <span class="stat-badge">Seoul-Based Research Group</span>
-                        <h2 class="section-title mb-4">Bridging Ambition with Global Standards</h2>
-                        <p class="lead text-secondary mb-4">Founded by PhD researchers at top-tier South Korean universities, GradAssist was established to demystify the complexities of international admissions.</p>
-                        <p class="text-muted">We don't just edit documents; we provide a <strong>Strategic Pedagogy</strong>. Our team understands what admission committees seek because we operate within those very research labs. From program selection to technical proposal refinement, we ensure your application speaks the language of global academia.</p>
+                        <span class="label-accent">The GradAssist Story</span>
+                        <h2 class="section-title">Founded by Researchers, For Researchers.</h2>
+                        <p class="lead text-secondary mb-4">GradAssist was established by a cohort of PhD researchers in South Korea who recognized a critical gap in high-level academic mentorship.</p>
+                        <p class="text-muted">We provide more than just document editing; we offer a <strong>Strategic Pedagogy</strong>. By aligning your unique academic background with the specific expectations of global Principal Investigators (PIs), we help you secure fully-funded positions in top-tier research laboratories.</p>
                     </div>
-                    <div class="col-lg-5 ps-lg-5 text-center">
-                        <div class="p-5 rounded-circle border border-5 border-light shadow-sm bg-light">
-                             <img src="logo.jpg" class="img-fluid opacity-75" alt="GradAssist Seal" style="max-width: 200px;">
+                    <div class="col-lg-5 text-center">
+                        <div class="p-4 border border-2 rounded-circle d-inline-block border-light bg-light shadow-sm">
+                            <i class="bi bi-mortarboard-fill display-1" style="color: var(--brand-red);"></i>
                         </div>
                     </div>
                 </div>
@@ -254,49 +242,50 @@
         </div>
     </section>
 
-    <section id="services" class="section-padding">
+    <section id="services" class="section-padding bg-white">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-label">Specialized Support</span>
+                <span class="label-accent">Core Expertise</span>
                 <h2 class="section-title">Strategic Advisory Areas</h2>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
+                        <div class="service-icon"><i class="bi bi-journal-richtext"></i></div>
                         <h5 class="fw-bold">Research Proposal Design</h5>
-                        <p class="text-muted small">Collaborative development of high-impact research questions and methodologies that demonstrate technical maturity.</p>
+                        <p class="text-muted small">We help you conceptualize and structure high-impact research questions that demonstrate technical maturity to admission committees.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-person-badge"></i></div>
-                        <h5 class="fw-bold">CV Engineering</h5>
-                        <p class="text-muted small">Optimizing your academic trajectory to highlight technical skills, publications, and research potential for PhD lab placements.</p>
+                        <div class="service-icon"><i class="bi bi-person-workspace"></i></div>
+                        <h5 class="fw-bold">Academic CV Engineering</h5>
+                        <p class="text-muted small">Beyond formatting, we strategically highlight your research trajectory, technical competencies, and publication potential.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-vector-pen"></i></div>
-                        <h5 class="fw-bold">Statement of Purpose (SOP)</h5>
-                        <p class="text-muted small">Narrative-driven editing that connects your past experiences to your future goals with clarity and academic poise.</p>
+                        <div class="service-icon"><i class="bi bi-globe-americas"></i></div>
+                        <h5 class="fw-bold">Lab Outreach Strategy</h5>
+                        <p class="text-muted small">Professional communication strategies for approaching Professors and Principal Investigators in South Korea and globally.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="service-card d-flex align-items-start gap-4">
-                        <div class="service-icon flex-shrink-0"><i class="bi bi-globe"></i></div>
+                        <div class="service-icon flex-shrink-0"><i class="bi bi-file-earmark-medical"></i></div>
                         <div>
-                            <h5 class="fw-bold">Lab Outreach Strategy</h5>
-                            <p class="text-muted small">Professional communication strategies for approaching Professors and Principal Investigators (PIs) globally.</p>
+                            <h5 class="fw-bold">SOP Structuring & Rhetoric</h5>
+                            <p class="text-muted small">Developing a compelling academic narrative that connects your past achievements to your future research objectives with clarity.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="service-card d-flex align-items-start gap-4">
-                        <div class="service-icon flex-shrink-0"><i class="bi bi-mortarboard"></i></div>
+                        <div class="service-icon flex-shrink-0"><i class="bi bi-bank"></i></div>
                         <div>
-                            <h5 class="fw-bold">Scholarship Navigation</h5>
-                            <p class="text-muted small">Documentation support for GKS (Korea), MEXT (Japan), and European research fellowships.</p>
+                            <h5 class="fw-bold">Scholarship Documentation</h5>
+                            <h5 class="fw-bold">Scholarship Documentation</h5>
+                            <p class="text-muted small">Specialized support for GKS (Korea), MEXT (Japan), and European research fellowship applications.</p>
                         </div>
                     </div>
                 </div>
@@ -308,25 +297,23 @@
         <div class="chat-window" id="chatWindow">
             <div class="chat-header d-flex justify-content-between align-items-center">
                 <div>
-                    <div class="fw-bold" style="font-size: 1.1rem;">AI Research Concierge</div>
-                    <small class="opacity-75">Trained on GradAssist Methodology</small>
+                    <div class="fw-bold">Research Concierge</div>
+                    <small class="opacity-75">Trained on PhD Methodology</small>
                 </div>
                 <i class="bi bi-x-circle-fill fs-4" style="cursor: pointer;" onclick="toggleChat()"></i>
             </div>
-            <div id="chat-messages" class="p-4 flex-grow-1 overflow-auto d-flex flex-column gap-3 bg-light">
-                <div class="msg ai-msg p-3 rounded-4 shadow-sm">
-                    Greetings. I am the GradAssist AI, specialized in PhD-led application strategies. How may I assist in refining your academic profile today?
-                </div>
+            <div id="chat-messages">
+                <div class="msg ai-msg">Greetings. I am the GradAssist AI Assistant. How can I assist you with your academic profile or research proposal today?</div>
             </div>
             <div class="p-4 border-top bg-white">
                 <div class="input-group">
                     <input type="text" id="chatInput" class="form-control border-0 bg-light p-3" placeholder="Describe your research goal...">
-                    <button class="btn btn-brand px-4" onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
+                    <button class="btn btn-brand" onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
                 </div>
             </div>
         </div>
         <div class="chat-trigger" onclick="toggleChat()">
-            <i class="bi bi-chat-left-dots-fill"></i>
+            <i class="bi bi-chat-right-text-fill"></i>
         </div>
     </div>
 
@@ -344,16 +331,16 @@
             addMessage(text, 'user');
             input.value = '';
 
-            // AI Backend placeholders
+            // AI Backend Placeholder
             setTimeout(() => {
-                addMessage("I am analyzing your query through our strategic lens. To provide the best technical advice on your " + text + ", please connect with our researchers on Facebook for a detailed review.", 'ai');
+                addMessage("I am analyzing your request based on our research-led framework. To get a technical review from our team in Korea, please reach out to us directly via our official Facebook channel.", 'ai');
             }, 800);
         }
 
         function addMessage(text, sender) {
             const container = document.getElementById('chat-messages');
             const div = document.createElement('div');
-            div.className = `msg ${sender}-msg p-3 rounded-4 shadow-sm`;
+            div.className = `msg ${sender}-msg`;
             div.innerHTML = marked.parse(text);
             container.appendChild(div);
             container.scrollTop = container.scrollHeight;
