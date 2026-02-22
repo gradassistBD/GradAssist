@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GradAssist | MS & PhD Advisory for South Korea</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Expert academic consultancy helping Bangladeshi students secure MS and PhD positions in South Korea. GKS, Brain Pool, professor outreach guidance.">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500;9..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
@@ -17,682 +18,528 @@
             --sage: #4A7C59;
             --text: #1C1C1C;
             --muted: #6B6359;
+            --white: #ffffff;
         }
+
+        /* ── RESET & BASE ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            overflow-x: hidden;
-        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; }
 
         /* ── NAVIGATION ── */
         nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.4rem 5%;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+            padding: 1.1rem 5%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(250,247,242,0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            transition: all 0.3s;
+            background: rgba(250,247,242,0.96); backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0,0,0,0.055);
+            transition: box-shadow 0.3s;
         }
+        nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
         .logo { display: flex; flex-direction: column; line-height: 1; }
-        .logo-main { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.7rem; color: var(--crimson); letter-spacing: -1px; }
-        .logo-sub { font-size: 0.55rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage); margin-top: 3px; }
-        .nav-links { display: flex; gap: 2.5rem; align-items: center; list-style: none; }
-        .nav-links a { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+        .logo-main { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.65rem; color: var(--crimson); letter-spacing: -1px; }
+        .logo-sub { font-size: 0.5rem; font-weight: 600; letter-spacing: 2.8px; text-transform: uppercase; color: var(--sage); margin-top: 3px; }
+        .nav-links { display: flex; gap: 2.2rem; align-items: center; list-style: none; }
+        .nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); transition: color 0.2s; }
         .nav-links a:hover { color: var(--crimson); }
-        .nav-cta {
-            background: var(--crimson); color: white !important;
-            padding: 0.6rem 1.4rem; border-radius: 50px;
-            transition: all 0.3s !important;
-        }
-        .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .hamburger span { width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
+        .nav-cta { background: var(--crimson) !important; color: white !important; padding: 0.55rem 1.3rem !important; border-radius: 50px; transition: background 0.25s !important; }
+        .nav-cta:hover { background: var(--navy) !important; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--navy); display: block; transition: all 0.3s; }
+        .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--white); padding: 1.5rem 5% 2rem; border-bottom: 1px solid var(--sand); z-index: 199; flex-direction: column; gap: 1.2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a { font-size: 0.9rem; font-weight: 600; color: var(--navy); padding: 0.4rem 0; border-bottom: 1px solid var(--sand); }
 
         /* ── HERO ── */
         .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 120px 5% 80px;
-            gap: 5rem;
-            background: var(--cream);
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh; display: grid; grid-template-columns: 55% 1fr;
+            align-items: center; padding: 100px 5% 70px; gap: 4rem;
+            position: relative; overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            right: -200px; top: -200px;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(181,22,26,0.05) 0%, transparent 70%);
-            border-radius: 50%;
+        .hero-bg-shape {
+            position: absolute; right: -100px; top: -100px;
+            width: 700px; height: 700px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(181,22,26,0.055) 0%, transparent 65%);
+            pointer-events: none;
         }
-        .hero-tag {
+        .hero-bg-dots {
+            position: absolute; left: 0; bottom: 0; width: 100%; height: 300px;
+            background-image: radial-gradient(circle, rgba(13,31,60,0.06) 1px, transparent 1px);
+            background-size: 30px 30px; pointer-events: none;
+            mask-image: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-pill {
             display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(181,22,26,0.07); color: var(--crimson);
-            padding: 6px 14px; border-radius: 50px;
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-            margin-bottom: 1.8rem;
+            background: rgba(181,22,26,0.08); color: var(--crimson);
+            padding: 6px 15px; border-radius: 50px; margin-bottom: 1.8rem;
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
         }
-        .hero-tag span { width: 6px; height: 6px; background: var(--crimson); border-radius: 50%; display: inline-block; }
+        .hero-pill-dot { width: 6px; height: 6px; background: var(--crimson); border-radius: 50%; animation: pulse-dot 2s infinite; }
+        @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
         .hero h1 {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(3rem, 5.5vw, 5.2rem);
-            font-weight: 900;
-            line-height: 1.0;
-            color: var(--navy);
-            letter-spacing: -2px;
-            margin-bottom: 1.5rem;
+            font-family: 'Fraunces', serif; font-size: clamp(2.8rem, 4.8vw, 5rem);
+            font-weight: 900; line-height: 1.0; color: var(--navy);
+            letter-spacing: -2.5px; margin-bottom: 1.4rem;
         }
         .hero h1 em { font-style: italic; color: var(--crimson); }
-        .hero p {
-            font-size: 1.05rem; color: var(--muted);
-            line-height: 1.75; max-width: 480px; margin-bottom: 2.5rem;
+        .hero-sub { font-size: 1rem; color: var(--muted); line-height: 1.82; max-width: 500px; margin-bottom: 2.5rem; }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-p { background: var(--crimson); color: white; padding: 13px 26px; border-radius: 50px; font-weight: 600; font-size: 0.87rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .btn-p:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,31,60,0.18); }
+        .btn-s { background: transparent; color: var(--navy); padding: 13px 26px; border-radius: 50px; font-weight: 600; font-size: 0.87rem; border: 2px solid var(--sand); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .btn-s:hover { border-color: var(--navy); background: var(--navy); color: white; }
+        .hero-visual { position: relative; z-index: 1; }
+        .hero-img-frame {
+            border-radius: 28px; overflow: hidden; position: relative;
+            box-shadow: 0 30px 80px rgba(13,31,60,0.15);
         }
-        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-primary {
-            background: var(--crimson); color: white;
-            padding: 14px 28px; border-radius: 50px;
-            font-weight: 600; font-size: 0.9rem;
-            border: none; cursor: pointer; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px;
-            transition: all 0.3s;
+        .hero-img-frame img { width: 100%; border-radius: 28px; }
+        .hero-img-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(181,22,26,0.06) 0%, transparent 50%); border-radius: 28px; }
+        .hero-float-card {
+            position: absolute; background: white; border-radius: 18px;
+            padding: 1rem 1.4rem; box-shadow: 0 15px 45px rgba(0,0,0,0.11);
+            border: 1px solid rgba(0,0,0,0.04);
         }
-        .btn-primary:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,31,60,0.2); }
-        .btn-secondary {
-            background: transparent; color: var(--navy);
-            padding: 14px 28px; border-radius: 50px;
-            font-weight: 600; font-size: 0.9rem;
-            border: 2px solid var(--sand); cursor: pointer; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px;
-            transition: all 0.3s;
-        }
-        .btn-secondary:hover { border-color: var(--navy); background: var(--navy); color: white; }
-
-        .hero-visual {
-            position: relative;
-        }
-        .hero-img-wrap {
-            position: relative;
-            border-radius: 32px;
-            overflow: hidden;
-        }
-        .hero-img-wrap img {
-            width: 100%; border-radius: 32px;
-            display: block;
-        }
-        .hero-stat-card {
-            position: absolute;
-            background: white; border-radius: 20px;
-            padding: 1rem 1.4rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-        .stat-card-1 { bottom: -20px; left: -30px; }
-        .stat-card-2 { top: 30px; right: -30px; }
-        .stat-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900; color: var(--crimson); line-height: 1; }
-        .stat-label { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .hfc-1 { bottom: -20px; left: -30px; }
+        .hfc-2 { top: 22px; right: -28px; }
+        .hfc-num { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; color: var(--crimson); line-height: 1; }
+        .hfc-txt { font-size: 0.67rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
 
         /* ── TRUST STRIP ── */
-        .trust-strip {
-            padding: 2.5rem 5%;
-            background: var(--navy);
-            display: flex; justify-content: center; align-items: center; gap: 4rem;
-            flex-wrap: wrap;
-        }
-        .trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500; }
-        .trust-item i { color: var(--gold); font-size: 1.2rem; }
+        .trust { padding: 2.2rem 5%; background: var(--navy); display: flex; justify-content: center; align-items: center; gap: 3.5rem; flex-wrap: wrap; }
+        .t-item { display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,0.6); font-size: 0.8rem; font-weight: 500; }
+        .t-item i { color: var(--gold); font-size: 1.1rem; }
 
         /* ── ABOUT ── */
-        .about {
-            padding: 120px 5%;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center;
-        }
-        .section-label {
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-            color: var(--crimson); margin-bottom: 1rem; display: block;
-        }
-        .section-title {
-            font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 3.2rem);
-            font-weight: 900; color: var(--navy); line-height: 1.1;
-            letter-spacing: -1.5px; margin-bottom: 1.5rem;
-        }
-        .about-text { color: var(--muted); line-height: 1.9; font-size: 0.97rem; }
-        .about-text + .about-text { margin-top: 1rem; }
-        .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.5rem; }
-        .highlight-item {
-            background: white; border-radius: 16px; padding: 1.2rem 1.4rem;
-            border: 1px solid var(--sand); transition: all 0.3s;
-        }
-        .highlight-item:hover { border-color: var(--crimson); transform: translateY(-2px); }
-        .highlight-item i { color: var(--crimson); font-size: 1.3rem; margin-bottom: 0.5rem; display: block; }
-        .highlight-item h4 { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
-        .highlight-item p { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
-        .about-visual-block {
-            background: var(--navy); border-radius: 32px; padding: 3rem;
-            color: white; position: relative; overflow: hidden;
-        }
-        .about-visual-block::before {
-            content: '"'; font-family: 'Fraunces', serif; font-size: 15rem;
-            position: absolute; top: -30px; right: 20px; color: rgba(255,255,255,0.04);
-            line-height: 1; font-weight: 900;
-        }
-        .quote-text { font-family: 'Fraunces', serif; font-size: 1.4rem; line-height: 1.5; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
-        .quote-author { font-size: 0.8rem; font-weight: 600; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+        .about { padding: 110px 5%; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
+        .body-text { color: var(--muted); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; }
+        .hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+        .hl-card { background: white; border-radius: 16px; padding: 1.2rem; border: 1px solid var(--sand); transition: all 0.3s; }
+        .hl-card:hover { border-color: var(--crimson); transform: translateY(-2px); }
+        .hl-card i { color: var(--crimson); font-size: 1.2rem; display: block; margin-bottom: 0.45rem; }
+        .hl-card h4 { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+        .hl-card p { font-size: 0.74rem; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+        .quote-block { background: var(--navy); border-radius: 28px; padding: 2.8rem; position: relative; overflow: hidden; }
+        .quote-block::before { content: '"'; font-family: 'Fraunces', serif; font-size: 11rem; position: absolute; top: -20px; right: 20px; color: rgba(255,255,255,0.035); line-height: 1; font-weight: 900; pointer-events: none; }
+        .q-text { font-family: 'Fraunces', serif; font-size: 1.25rem; line-height: 1.6; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
+        .q-auth { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
 
         /* ── SERVICES ── */
-        .services {
-            padding: 120px 5%;
-            background: white;
-        }
-        .services-header { text-align: center; max-width: 600px; margin: 0 auto 5rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .svc-card {
-            background: var(--cream); border-radius: 24px; padding: 2.5rem;
-            border: 1px solid var(--sand); transition: all 0.4s;
-            position: relative; overflow: hidden;
-        }
-        .svc-card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 4px; height: 0; background: var(--crimson);
-            transition: height 0.4s;
-        }
-        .svc-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.07); }
-        .svc-card:hover::before { height: 100%; }
-        .svc-icon {
-            width: 52px; height: 52px; background: rgba(181,22,26,0.08);
-            border-radius: 14px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: var(--crimson); margin-bottom: 1.5rem;
-        }
-        .svc-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; }
-        .svc-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
-        .svc-card-wide { grid-column: span 2; display: flex; gap: 2rem; align-items: flex-start; }
-        .svc-card-wide .svc-icon { flex-shrink: 0; }
+        .services { padding: 110px 5%; background: white; }
+        .services-hd { text-align: center; max-width: 560px; margin: 0 auto 4.5rem; }
+        .services-hd p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
+        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+        .svc { background: var(--cream); border-radius: 22px; padding: 2.2rem; border: 1px solid var(--sand); transition: all 0.4s; position: relative; overflow: hidden; cursor: default; }
+        .svc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--crimson); transform: scaleX(0); transition: transform 0.4s; transform-origin: left; }
+        .svc:hover { transform: translateY(-8px); box-shadow: 0 25px 55px rgba(0,0,0,0.07); background: white; }
+        .svc:hover::after { transform: scaleX(1); }
+        .svc-ico { width: 48px; height: 48px; background: rgba(181,22,26,0.08); border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--crimson); margin-bottom: 1.3rem; transition: all 0.3s; }
+        .svc:hover .svc-ico { background: var(--crimson); color: white; }
+        .svc h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.7rem; }
+        .svc p { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+        .svc-wide { grid-column: span 2; display: flex; gap: 2rem; align-items: flex-start; }
+        .svc-wide .svc-ico { flex-shrink: 0; }
 
-        /* ── SCHOLARSHIP SECTION ── */
-        .scholarship {
-            padding: 120px 5%;
-            background: var(--navy);
-            position: relative; overflow: hidden;
-        }
-        .scholarship::after {
-            content: '';
-            position: absolute; bottom: 0; right: 0;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle at bottom right, rgba(201,148,58,0.15) 0%, transparent 70%);
-        }
-        .scholarship .section-label { color: var(--gold); }
-        .scholarship .section-title { color: white; }
-        .scholarship-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
-        .scholarship-intro p { color: rgba(255,255,255,0.65); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .scholarship-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .sch-card {
-            background: rgba(255,255,255,0.06); border-radius: 20px; padding: 1.8rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s;
-        }
-        .sch-card:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); }
-        .sch-badge {
-            display: inline-block; background: var(--gold); color: white;
-            font-size: 0.65rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-            padding: 4px 10px; border-radius: 4px; margin-bottom: 1rem;
-        }
-        .sch-card h4 { font-family: 'Fraunces', serif; font-size: 1.15rem; color: white; margin-bottom: 0.5rem; }
-        .sch-card p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-        .sch-card-details { margin-top: 1rem; display: flex; flex-direction: column; gap: 5px; }
-        .sch-detail { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.7); }
-        .sch-detail i { color: var(--gold); font-size: 0.85rem; }
+        /* ── SCHOLARSHIPS ── */
+        .sch { padding: 110px 5%; background: var(--navy); position: relative; overflow: hidden; }
+        .sch::after { content: ''; position: absolute; bottom: 0; right: 0; width: 500px; height: 500px; background: radial-gradient(circle at bottom right, rgba(201,148,58,0.12) 0%, transparent 70%); pointer-events: none; }
+        .sch .section-label { color: var(--gold); }
+        .sch .section-title { color: white; }
+        .sch-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5.5rem; align-items: start; position: relative; z-index: 1; }
+        .sch-intro p { color: rgba(255,255,255,0.58); line-height: 1.9; font-size: 0.92rem; margin-bottom: 1.3rem; }
+        .sch-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+        .sc { background: rgba(255,255,255,0.06); border-radius: 18px; padding: 1.7rem; border: 1px solid rgba(255,255,255,0.09); transition: all 0.3s; }
+        .sc:hover { background: rgba(255,255,255,0.1); border-color: rgba(201,148,58,0.5); transform: translateY(-3px); }
+        .sc-badge { display: inline-block; background: var(--gold); color: white; font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 0.9rem; }
+        .sc h4 { font-family: 'Fraunces', serif; font-size: 1.1rem; color: white; margin-bottom: 0.5rem; }
+        .sc p { font-size: 0.81rem; color: rgba(255,255,255,0.52); line-height: 1.6; }
+        .sc-details { margin-top: 0.9rem; display: flex; flex-direction: column; gap: 5px; }
+        .sc-detail { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: rgba(255,255,255,0.65); }
+        .sc-detail i { color: var(--gold); font-size: 0.82rem; }
 
         /* ── PROCESS ── */
-        .process { padding: 120px 5%; background: var(--cream); }
-        .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-        .process-steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
-        .step { display: flex; gap: 1.5rem; }
-        .step-num {
-            width: 44px; height: 44px; flex-shrink: 0;
-            border-radius: 12px; background: var(--crimson); color: white;
-            font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 900;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .step-content h4 { font-weight: 700; color: var(--navy); margin-bottom: 5px; }
-        .step-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-        .process-cta-block {
-            background: white; border-radius: 32px; padding: 3.5rem;
-            border: 1px solid var(--sand); text-align: center;
-        }
-        .process-cta-block h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 1rem; }
-        .process-cta-block p { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+        .process { padding: 110px 5%; }
+        .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+        .steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
+        .step { display: flex; gap: 1.4rem; }
+        .step-n { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: var(--crimson); color: white; font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .step h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: 0.95rem; }
+        .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+        .cta-box { background: white; border-radius: 28px; padding: 3rem; border: 1px solid var(--sand); text-align: center; position: sticky; top: 100px; }
+        .cta-box .emoji { font-size: 3.5rem; margin-bottom: 1rem; }
+        .cta-box h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; color: var(--navy); margin-bottom: 0.8rem; }
+        .cta-box p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 2rem; }
+        .cta-divider { text-align: center; font-size: 0.8rem; color: var(--muted); margin: 1rem 0; }
 
         /* ── FOOTER ── */
-        footer {
-            background: #080F1C;
-            padding: 5rem 5% 3rem;
-        }
+        footer { background: #070D1A; padding: 5rem 5% 3rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
-        .footer-brand .logo-main { font-size: 2rem; }
-        .footer-brand .logo-sub { color: rgba(255,255,255,0.4); }
-        .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.88rem; line-height: 1.75; margin-top: 1.2rem; max-width: 300px; }
-        .footer-col h5 { color: white; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; }
-        .footer-col a { display: block; color: rgba(255,255,255,0.45); font-size: 0.88rem; text-decoration: none; margin-bottom: 0.7rem; transition: color 0.2s; }
+        .footer-logo .logo-main { font-size: 1.8rem; }
+        .footer-logo .logo-sub { color: rgba(255,255,255,0.3); }
+        .footer-desc { color: rgba(255,255,255,0.38); font-size: 0.85rem; line-height: 1.8; margin-top: 1.2rem; max-width: 290px; }
+        .footer-col h5 { color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1.3rem; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-bottom: 0.7rem; transition: color 0.2s; }
         .footer-col a:hover { color: var(--gold); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
-        .social-links { display: flex; gap: 1rem; }
-        .social-links a {
-            width: 38px; height: 38px; background: rgba(255,255,255,0.07); border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.5); text-decoration: none; font-size: 1.1rem;
-            transition: all 0.2s;
-        }
-        .social-links a:hover { background: var(--crimson); color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 0.78rem; }
+        .socials { display: flex; gap: 0.8rem; }
+        .socials a { width: 38px; height: 38px; background: rgba(255,255,255,0.06); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.45); font-size: 1.1rem; transition: all 0.2s; }
+        .socials a:hover { background: var(--crimson); color: white; }
+
+        /* ── SECTION HELPERS ── */
+        .section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.9rem; display: block; }
+        .section-title { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3vw, 2.9rem); font-weight: 900; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.5rem; }
 
         /* ── CHAT WIDGET ── */
-        #chat-widget { position: fixed; bottom: 32px; right: 32px; z-index: 999; }
+        #chat-wrap { position: fixed; bottom: 28px; right: 28px; z-index: 999; }
         .chat-fab {
-            width: 60px; height: 60px; background: var(--crimson); color: white;
-            border-radius: 20px; border: none; cursor: pointer;
+            width: 58px; height: 58px; background: var(--crimson); color: white;
+            border-radius: 18px; border: none; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; box-shadow: 0 10px 30px rgba(181,22,26,0.35);
-            transition: all 0.3s;
+            font-size: 1.45rem; box-shadow: 0 8px 28px rgba(181,22,26,0.38);
+            transition: all 0.3s; position: relative;
         }
-        .chat-fab:hover { transform: scale(1.05) rotate(-5deg); background: var(--navy); }
-        .chat-fab .badge {
-            position: absolute; top: -5px; right: -5px;
-            width: 18px; height: 18px; background: var(--gold); border-radius: 50%;
-            font-size: 0.6rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
-            color: white;
+        .chat-fab:hover { transform: scale(1.07) rotate(-5deg); background: var(--navy); }
+        .fab-badge {
+            position: absolute; top: -6px; right: -6px;
+            background: var(--gold); color: white; font-size: 0.55rem;
+            font-weight: 800; padding: 2px 6px; border-radius: 10px; letter-spacing: 0.5px;
         }
-
         .chat-panel {
-            position: absolute; bottom: 80px; right: 0;
-            width: 380px; height: 580px;
-            background: white; border-radius: 28px;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
-            display: none; flex-direction: column; overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.06);
-            animation: slideUp 0.3s ease;
+            position: absolute; bottom: 72px; right: 0;
+            width: 370px; background: white; border-radius: 26px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.16);
+            display: none; flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.055);
+            overflow: hidden; max-height: 560px;
+            animation: panelUp 0.28s ease;
         }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .chat-panel.open { display: flex; }
+        @keyframes panelUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
-        .chat-head {
-            background: var(--navy); padding: 1.5rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .chat-head-info { display: flex; align-items: center; gap: 0.75rem; }
-        .chat-avatar {
-            width: 38px; height: 38px; background: var(--crimson); border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; color: white;
-        }
-        .chat-head-name { font-weight: 700; color: white; font-size: 0.9rem; }
-        .chat-head-status { font-size: 0.72rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 5px; }
-        .status-dot { width: 7px; height: 7px; background: #4CAF50; border-radius: 50%; }
-        .chat-close { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.2rem; cursor: pointer; transition: color 0.2s; }
-        .chat-close:hover { color: white; }
+        .chat-head { background: var(--navy); padding: 1.3rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .ch-info { display: flex; align-items: center; gap: 0.75rem; }
+        .ch-avatar { width: 36px; height: 36px; background: var(--crimson); border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; }
+        .ch-name { font-weight: 700; color: white; font-size: 0.88rem; }
+        .ch-status { font-size: 0.7rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 5px; margin-top: 1px; }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; }
+        .status-dot.online { background: #4CAF50; }
+        .status-dot.loading { background: var(--gold); animation: pulse-dot 1.2s infinite; }
+        .ch-close { background: none; border: none; color: rgba(255,255,255,0.5); font-size: 1.15rem; cursor: pointer; transition: color 0.2s; padding: 2px; }
+        .ch-close:hover { color: white; }
 
-        .chat-disclaimer {
-            background: rgba(201,148,58,0.1); border-bottom: 1px solid rgba(201,148,58,0.2);
-            padding: 0.6rem 1rem; font-size: 0.72rem; color: #8B6914; text-align: center;
-        }
+        .chat-note { background: rgba(201,148,58,0.1); padding: 0.55rem 1rem; font-size: 0.7rem; color: #7A5E10; text-align: center; border-bottom: 1px solid rgba(201,148,58,0.15); }
 
-        .chat-messages {
-            flex: 1; overflow-y: auto; padding: 1.2rem; display: flex; flex-direction: column; gap: 12px;
-            background: #F9F7F4;
-        }
-        .chat-messages::-webkit-scrollbar { width: 4px; }
-        .chat-messages::-webkit-scrollbar-track { background: transparent; }
-        .chat-messages::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 4px; }
+        .chat-msgs { flex: 1; overflow-y: auto; padding: 1.2rem; display: flex; flex-direction: column; gap: 11px; background: #F9F7F4; min-height: 280px; max-height: 320px; }
+        .chat-msgs::-webkit-scrollbar { width: 3px; }
+        .chat-msgs::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
 
-        .msg-row { display: flex; }
-        .msg-row.user { justify-content: flex-end; }
-        .msg-bubble {
-            max-width: 80%; padding: 10px 14px; border-radius: 16px;
-            font-size: 0.88rem; line-height: 1.55;
-        }
-        .msg-bubble.bot { background: white; color: var(--text); border: 1px solid var(--sand); border-radius: 4px 16px 16px 16px; }
-        .msg-bubble.user { background: var(--crimson); color: white; border-radius: 16px 4px 16px 16px; }
-        .msg-bubble p { margin: 0 0 6px; } .msg-bubble p:last-child { margin-bottom: 0; }
-        .msg-bubble ul { padding-left: 16px; margin: 4px 0; }
-        .msg-bubble strong { font-weight: 700; }
+        .msg-r { display: flex; }
+        .msg-r.user { justify-content: flex-end; }
+        .bubble { max-width: 82%; padding: 9px 13px; border-radius: 15px; font-size: 0.85rem; line-height: 1.55; }
+        .bubble.bot { background: white; color: var(--text); border: 1px solid var(--sand); border-radius: 4px 15px 15px 15px; }
+        .bubble.user { background: var(--crimson); color: white; border-radius: 15px 4px 15px 15px; }
+        .bubble p { margin: 0 0 5px; } .bubble p:last-child { margin-bottom: 0; }
+        .bubble ul, .bubble ol { padding-left: 1.2rem; margin: 4px 0; }
+        .bubble li { margin-bottom: 3px; }
+        .bubble strong { font-weight: 700; }
 
-        .typing { display: flex; gap: 5px; align-items: center; padding: 8px 0; }
-        .typing span { width: 7px; height: 7px; background: var(--sand); border-radius: 50%; animation: bounce 1.2s infinite; }
-        .typing span:nth-child(2) { animation-delay: 0.2s; }
-        .typing span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+        .typing-bbl { display: flex; gap: 4px; padding: 4px 2px; align-items: center; }
+        .typing-bbl span { width: 7px; height: 7px; background: var(--sand); border-radius: 50%; animation: typingBounce 1.3s infinite; }
+        .typing-bbl span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-bbl span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typingBounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
 
-        .chat-suggestions {
-            padding: 0.5rem 1rem; display: flex; gap: 6px; flex-wrap: wrap;
-            background: #F9F7F4; border-top: 1px solid var(--sand);
-        }
-        .sugg-btn {
-            background: white; border: 1px solid var(--sand); border-radius: 20px;
-            padding: 5px 12px; font-size: 0.75rem; color: var(--navy); cursor: pointer;
-            transition: all 0.2s; white-space: nowrap;
-        }
-        .sugg-btn:hover { background: var(--crimson); color: white; border-color: var(--crimson); }
+        .chat-chips { padding: 0.55rem 1rem; display: flex; gap: 6px; flex-wrap: wrap; background: #F9F7F4; border-top: 1px solid var(--sand); }
+        .chip { background: white; border: 1px solid var(--sand); border-radius: 20px; padding: 4px 11px; font-size: 0.72rem; color: var(--navy); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .chip:hover { background: var(--crimson); color: white; border-color: var(--crimson); }
 
-        .chat-input-area { padding: 1rem; background: white; border-top: 1px solid var(--sand); display: flex; gap: 8px; }
-        .chat-input-area input {
-            flex: 1; background: var(--cream); border: 1px solid var(--sand); border-radius: 12px;
-            padding: 10px 14px; font-size: 0.88rem; outline: none; font-family: 'DM Sans', sans-serif;
-            transition: border-color 0.2s;
-        }
-        .chat-input-area input:focus { border-color: var(--crimson); }
-        .send-btn {
-            width: 40px; height: 40px; background: var(--crimson); color: white;
-            border: none; border-radius: 12px; cursor: pointer; font-size: 1rem;
-            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-        }
-        .send-btn:hover { background: var(--navy); transform: scale(1.05); }
-        .send-btn:disabled { background: var(--sand); cursor: not-allowed; transform: none; }
+        .chat-input { padding: 0.9rem; background: white; border-top: 1px solid var(--sand); display: flex; gap: 8px; align-items: center; }
+        .chat-input input { flex: 1; background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 9px 13px; font-size: 0.86rem; outline: none; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; }
+        .chat-input input:focus { border-color: var(--crimson); }
+        .send-btn { width: 38px; height: 38px; background: var(--crimson); color: white; border: none; border-radius: 11px; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+        .send-btn:hover { background: var(--navy); }
+        .send-btn:disabled { background: var(--sand); cursor: not-allowed; }
 
-        /* ── API KEY MODAL ── */
-        .modal-overlay {
-            display: none; position: fixed; inset: 0; z-index: 2000;
-            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            align-items: center; justify-content: center;
-        }
-        .modal-overlay.open { display: flex; }
-        .modal-box {
-            background: white; border-radius: 24px; padding: 2.5rem;
-            max-width: 440px; width: 90%;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
-        }
-        .modal-box h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
-        .modal-box p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.5rem; }
-        .modal-input {
-            width: 100%; background: var(--cream); border: 1px solid var(--sand);
-            border-radius: 12px; padding: 12px 16px; font-size: 0.9rem;
-            outline: none; margin-bottom: 1rem; font-family: 'DM Sans', sans-serif;
-            transition: border-color 0.2s;
-        }
-        .modal-input:focus { border-color: var(--crimson); }
-        .modal-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 1.5rem; }
-        .modal-note a { color: var(--crimson); }
+        /* Status bar below input */
+        .chat-status-bar { padding: 0.4rem 1rem; background: white; font-size: 0.68rem; color: var(--muted); text-align: center; border-top: 1px solid rgba(0,0,0,0.04); }
+        .chat-status-bar a { color: var(--crimson); }
+
+        /* Config Modal */
+        .overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        .overlay.open { display: flex; }
+        .modal { background: white; border-radius: 24px; padding: 2.5rem; max-width: 430px; width: 90%; box-shadow: 0 40px 100px rgba(0,0,0,0.22); }
+        .modal h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .modal p { color: var(--muted); font-size: 0.87rem; line-height: 1.75; margin-bottom: 1.4rem; }
+        .modal label { font-size: 0.78rem; font-weight: 700; color: var(--navy); display: block; margin-bottom: 6px; letter-spacing: 0.3px; }
+        .modal input { width: 100%; background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 11px 15px; font-size: 0.88rem; outline: none; font-family: 'DM Sans', sans-serif; margin-bottom: 1.2rem; transition: border-color 0.2s; }
+        .modal input:focus { border-color: var(--crimson); }
+        .modal-hint { font-size: 0.73rem; color: var(--muted); margin-bottom: 1.8rem; line-height: 1.6; }
+        .modal-hint code { background: var(--sand); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.78rem; }
+        .modal-btns { display: flex; gap: 10px; }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero { grid-template-columns: 1fr; padding-top: 100px; }
+        @media (max-width: 960px) {
+            .hero { grid-template-columns: 1fr; padding-top: 90px; }
             .hero-visual { display: none; }
-            .about { grid-template-columns: 1fr; gap: 3rem; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .svc-card-wide { grid-column: span 2; }
-            .scholarship-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .svc-grid { grid-template-columns: 1fr 1fr; }
+            .svc-wide { grid-column: span 2; flex-direction: column; }
+            .sch-grid { grid-template-columns: 1fr; gap: 3rem; }
             .process-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .cta-box { position: static; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .services-grid { grid-template-columns: 1fr; }
-            .svc-card-wide { grid-column: span 1; flex-direction: column; }
-            .trust-strip { gap: 2rem; }
-            .scholarship-cards { grid-template-columns: 1fr; }
-            .about-highlights { grid-template-columns: 1fr; }
+            .svc-grid { grid-template-columns: 1fr; }
+            .svc-wide { grid-column: span 1; }
+            .sch-cards { grid-template-columns: 1fr; }
+            .hl-grid { grid-template-columns: 1fr; }
+            .trust { gap: 1.5rem; }
             .footer-grid { grid-template-columns: 1fr; }
-            .chat-panel { width: calc(100vw - 20px); right: -20px; }
+            .chat-panel { width: calc(100vw - 30px); right: -14px; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-    <a href="#" style="text-decoration:none">
-        <div class="logo">
-            <span class="logo-main">GradAssist</span>
-            <span class="logo-sub">Academic & Research Advisory</span>
-        </div>
+<!-- ── NAVIGATION ── -->
+<nav id="mainNav">
+    <a href="#" class="logo">
+        <span class="logo-main">GradAssist</span>
+        <span class="logo-sub">Academic & Research Advisory</span>
     </a>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#scholarships">Scholarships</a></li>
         <li><a href="#process">How It Works</a></li>
-        <li><a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="nav-cta">Free Consultation</a></li>
+        <li><a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="nav-cta">Free Consult</a></li>
     </ul>
-    <div class="hamburger" onclick="toggleMobileNav(this)">
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
-    </div>
+    </button>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#scholarships" onclick="closeMobileMenu()">Scholarships</a>
+    <a href="#process" onclick="closeMobileMenu()">How It Works</a>
+    <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank">Free Consultation →</a>
+</div>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero">
-    <div>
-        <div class="hero-tag">
-            <span></span> South Korea's #1 Choice for Graduate Admissions
-        </div>
+    <div class="hero-bg-shape"></div>
+    <div class="hero-bg-dots"></div>
+    <div class="hero-content">
+        <div class="hero-pill"><span class="hero-pill-dot"></span> South Korea's Top Graduate Consultancy for BD Students</div>
         <h1>Your Path to a<br><em>World-Class</em><br>PhD in Korea.</h1>
-        <p>Expert academic consultancy for Bangladeshi students targeting MS and PhD programs at top Korean universities — from proposal to admission.</p>
-        <div class="hero-actions">
-            <button class="btn-primary" onclick="openChat()">
-                <i class="bi bi-chat-text"></i> Ask Our AI Advisor
-            </button>
-            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-secondary">
-                <i class="bi bi-facebook"></i> Get Human Consultation
-            </a>
+        <p class="hero-sub">Expert academic consultancy helping Bangladeshi students secure fully-funded MS and PhD positions at KAIST, SNU, POSTECH, and other top Korean universities.</p>
+        <div class="hero-btns">
+            <button class="btn-p" onclick="openChat()"><i class="bi bi-robot"></i> Ask AI Advisor (Free)</button>
+            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-s"><i class="bi bi-facebook"></i> Talk to a Human</a>
         </div>
     </div>
     <div class="hero-visual">
-        <div class="hero-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900&auto=format&fit=crop" alt="Students at university" />
+        <div class="hero-img-frame">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop" alt="Students at university campus" loading="lazy"/>
         </div>
-        <div class="hero-stat-card stat-card-1">
-            <div class="stat-num">150+</div>
-            <div class="stat-label">Students Placed</div>
+        <div class="hero-float-card hfc-1">
+            <div class="hfc-num">150+</div>
+            <div class="hfc-txt">Students Placed</div>
         </div>
-        <div class="hero-stat-card stat-card-2">
-            <div class="stat-num">98%</div>
-            <div class="stat-label">Scholarship Rate</div>
+        <div class="hero-float-card hfc-2">
+            <div class="hfc-num">98%</div>
+            <div class="hfc-txt">Scholarship Rate</div>
         </div>
     </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-    <div class="trust-item"><i class="bi bi-mortarboard-fill"></i> PhD-Led Advisory Team</div>
-    <div class="trust-item"><i class="bi bi-geo-alt-fill"></i> Based in South Korea</div>
-    <div class="trust-item"><i class="bi bi-translate"></i> Bangla & English Support</div>
-    <div class="trust-item"><i class="bi bi-shield-check-fill"></i> Fully-Funded Scholarship Focus</div>
-    <div class="trust-item"><i class="bi bi-cpu-fill"></i> AI-Powered Knowledge Base</div>
+<!-- ── TRUST STRIP ── -->
+<div class="trust">
+    <div class="t-item"><i class="bi bi-mortarboard-fill"></i> PhD-Led Team in Korea</div>
+    <div class="t-item"><i class="bi bi-geo-alt-fill"></i> Seoul-Based Advisors</div>
+    <div class="t-item"><i class="bi bi-translate"></i> Bangla & English</div>
+    <div class="t-item"><i class="bi bi-shield-check-fill"></i> Fully-Funded Scholarship Focus</div>
+    <div class="t-item"><i class="bi bi-cpu-fill"></i> Free AI Knowledge Base</div>
 </div>
 
-<!-- ABOUT -->
+<!-- ── ABOUT ── -->
 <section id="about" class="about">
-    <div>
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">Guidance from researchers who made it.</h2>
-        <p class="about-text">GradAssist was founded by a cohort of PhD researchers currently studying and working in South Korea. We know the exact hurdles Bangladeshi students face — and we know how to overcome them.</p>
-        <p class="about-text">We don't just edit your documents. We help you build an <strong>academic identity</strong> that resonates with Korean PIs and scholarship committees, turning your potential into funded positions at KAIST, SNU, POSTECH, UNIST, and beyond.</p>
-        <div class="about-highlights">
-            <div class="highlight-item">
-                <i class="bi bi-file-earmark-check"></i>
-                <h4>Research-First Approach</h4>
-                <p>We align your profile with what PIs actually look for</p>
-            </div>
-            <div class="highlight-item">
-                <i class="bi bi-globe-asia-australia"></i>
-                <h4>Korea-Specific Expertise</h4>
-                <p>Deep knowledge of Korean academic culture & systems</p>
-            </div>
-            <div class="highlight-item">
-                <i class="bi bi-person-check"></i>
-                <h4>Personalized Strategy</h4>
-                <p>No cookie-cutter advice — every student is unique</p>
-            </div>
-            <div class="highlight-item">
-                <i class="bi bi-chat-square-text"></i>
-                <h4>24/7 AI Knowledge Base</h4>
-                <p>Instant answers to your scholarship questions</p>
+    <div class="about-grid">
+        <div>
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title">Guidance from researchers who've been there.</h2>
+            <p class="body-text">GradAssist was founded by a group of PhD researchers currently studying and working in South Korea. We understand every challenge Bangladeshi students face — language barriers, cultural gaps, complex application systems — and we know exactly how to overcome them.</p>
+            <p class="body-text">We don't just proofread documents. We help you build an <strong>academic identity</strong> that resonates with Korean professors and scholarship committees.</p>
+            <div class="hl-grid">
+                <div class="hl-card"><i class="bi bi-file-earmark-check"></i><h4>Research-First Approach</h4><p>We align your profile with what Korean PIs look for</p></div>
+                <div class="hl-card"><i class="bi bi-globe-asia-australia"></i><h4>Korea-Specific Expertise</h4><p>Deep knowledge of Korean academic culture & systems</p></div>
+                <div class="hl-card"><i class="bi bi-person-check"></i><h4>Personalized Strategy</h4><p>No cookie-cutter advice — every profile is unique</p></div>
+                <div class="hl-card"><i class="bi bi-robot"></i><h4>Free AI Chatbot</h4><p>Instant answers powered by open-source AI, 24/7</p></div>
             </div>
         </div>
-    </div>
-    <div>
-        <div class="about-visual-block">
-            <p class="quote-text">"The difference between an accepted and rejected application is rarely talent — it's the ability to communicate your research vision in a language the committee speaks."</p>
-            <span class="quote-author">— GradAssist Founding Team, Seoul</span>
+        <div>
+            <div class="quote-block">
+                <p class="q-text">"The difference between an accepted and rejected application is rarely talent — it's the ability to communicate your research vision in a language the committee speaks."</p>
+                <span class="q-auth">— GradAssist Founding Team, Seoul, South Korea</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ── SERVICES ── -->
 <section id="services" class="services">
-    <div class="services-header">
+    <div class="services-hd">
         <span class="section-label">What We Do</span>
-        <h2 class="section-title">Every service you need, under one roof.</h2>
+        <h2 class="section-title">Every service you need.</h2>
+        <p>From your first research idea to your final acceptance letter — we cover every step of your journey to South Korea.</p>
     </div>
-    <div class="services-grid">
-        <div class="svc-card">
-            <div class="svc-icon"><i class="bi bi-journal-richtext"></i></div>
+    <div class="svc-grid">
+        <div class="svc">
+            <div class="svc-ico"><i class="bi bi-journal-richtext"></i></div>
             <h3>Research Proposal Guidance</h3>
-            <p>Structured support in developing clear, focused, and competitive research proposals that demonstrate academic maturity to admission committees and PIs.</p>
+            <p>Structured support in developing clear, focused, and competitive research proposals that demonstrate academic maturity to PIs and admission committees.</p>
         </div>
-        <div class="svc-card">
-            <div class="svc-icon"><i class="bi bi-person-badge"></i></div>
+        <div class="svc">
+            <div class="svc-ico"><i class="bi bi-person-badge"></i></div>
             <h3>Academic CV Development</h3>
-            <p>Professional structuring of your academic CV tailored for MS and PhD applications — highlighting research trajectory, publications, and technical competencies.</p>
+            <p>Professional structuring and formatting of academic CVs tailored for MS and PhD applications — highlighting research trajectory and competencies.</p>
         </div>
-        <div class="svc-card">
-            <div class="svc-icon"><i class="bi bi-bank"></i></div>
+        <div class="svc">
+            <div class="svc-ico"><i class="bi bi-bank"></i></div>
             <h3>Scholarship Documentation</h3>
-            <p>Expert assistance preparing documents for GKS, Brain Pool, and other Korean scholarship programs, aligned with selection criteria.</p>
+            <p>Expert assistance preparing documents for GKS, Brain Pool, and other Korean scholarship programs — aligned with selection criteria.</p>
         </div>
-        <div class="svc-card svc-card-wide">
-            <div class="svc-icon"><i class="bi bi-file-earmark-medical"></i></div>
+        <div class="svc svc-wide">
+            <div class="svc-ico"><i class="bi bi-file-earmark-medical"></i></div>
             <div>
                 <h3>SOP Structuring & Editing</h3>
-                <p>Strategic development and refinement of your Statement of Purpose — building a compelling narrative that connects your past achievements to your future research goals with clarity and impact. We ensure your SOP speaks directly to what Korean admissions panels and professors value most.</p>
+                <p>Strategic development and refinement of your Statement of Purpose — building a compelling narrative that connects your past achievements to future research goals. We ensure your SOP speaks directly to what Korean admissions panels value most.</p>
             </div>
         </div>
-        <div class="svc-card svc-card-wide">
-            <div class="svc-icon"><i class="bi bi-compass"></i></div>
+        <div class="svc svc-wide">
+            <div class="svc-ico"><i class="bi bi-compass"></i></div>
             <div>
                 <h3>MS & PhD Application Strategy</h3>
-                <p>End-to-end personalized guidance on program selection, professor cold-email outreach, application timelines, and positioning your profile. We give you the insider knowledge that most consultancies simply don't have — because we're in Korea's research ecosystem right now.</p>
+                <p>Personalized guidance on program selection, professor cold-email outreach, application timelines, and positioning your profile. We give you insider knowledge because we are in Korea's research ecosystem right now.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SCHOLARSHIPS -->
-<section id="scholarships" class="scholarship">
-    <div class="scholarship-grid">
-        <div class="scholarship-intro">
+<!-- ── SCHOLARSHIPS ── -->
+<section id="scholarships" class="sch">
+    <div class="sch-grid">
+        <div class="sch-intro">
             <span class="section-label">Scholarships We Cover</span>
             <h2 class="section-title">Funded paths to Korea's top universities.</h2>
-            <p>South Korea offers some of the world's most generous STEM research scholarships. We have deep expertise in every major program — helping you find and win the right one for your profile.</p>
-            <a href="#" onclick="openChat(); return false;" class="btn-primary" style="display:inline-flex; margin-top:1rem;">
-                <i class="bi bi-chat-text"></i> Ask AI About Scholarships
-            </a>
+            <p>South Korea offers some of the world's most generous STEM research scholarships. We have deep expertise in every major program.</p>
+            <button class="btn-p" onclick="openChat()" style="margin-top:0.5rem;"><i class="bi bi-robot"></i> Ask AI About Scholarships</button>
         </div>
-        <div class="scholarship-cards">
-            <div class="sch-card">
-                <div class="sch-badge">Full Scholarship</div>
+        <div class="sch-cards">
+            <div class="sc">
+                <div class="sc-badge">Full Scholarship</div>
                 <h4>GKS (KGSP)</h4>
-                <p>Korean Government Scholarship Program — tuition, living stipend, airfare, and Korean language training.</p>
-                <div class="sch-card-details">
-                    <div class="sch-detail"><i class="bi bi-calendar-check"></i> MS: 3 yrs | PhD: 4 yrs</div>
-                    <div class="sch-detail"><i class="bi bi-cash"></i> Full tuition + ₩900K/month</div>
+                <p>Korean Government Scholarship Program — the most prestigious government-funded award for international students.</p>
+                <div class="sc-details">
+                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> MS: 3 yrs | PhD: 4 yrs</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Full tuition + ₩900K–1M/month</div>
+                    <div class="sc-detail"><i class="bi bi-airplane"></i> Round-trip airfare included</div>
                 </div>
             </div>
-            <div class="sch-card">
-                <div class="sch-badge">Research Grant</div>
-                <h4>Brain Pool Program</h4>
-                <p>For outstanding overseas researchers. PhD required. Up to ₩25M/month salary. Research collaborations with Korean institutions.</p>
-                <div class="sch-card-details">
-                    <div class="sch-detail"><i class="bi bi-calendar-check"></i> 1–3 years</div>
-                    <div class="sch-detail"><i class="bi bi-cash"></i> ₩5M–₩25M/month</div>
+            <div class="sc">
+                <div class="sc-badge">Research Grant</div>
+                <h4>Brain Pool (BP)</h4>
+                <p>For PhD holders invited to collaborate with Korean R&D institutions. Up to ₩25M/month salary. 2025 deadline: May 30.</p>
+                <div class="sc-details">
+                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> 1–3 years (up to 10 for BP+)</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> ₩5M–₩25M/month</div>
+                    <div class="sc-detail"><i class="bi bi-building"></i> NRF-managed program</div>
                 </div>
             </div>
-            <div class="sch-card">
-                <div class="sch-badge">University Award</div>
-                <h4>Professor-Led Funding</h4>
-                <p>Lab-funded positions (BK21, NRF projects). Most common path to full funding. We help you identify and approach the right professors.</p>
-                <div class="sch-card-details">
-                    <div class="sch-detail"><i class="bi bi-building"></i> KAIST, SNU, POSTECH, UNIST</div>
-                    <div class="sch-detail"><i class="bi bi-cash"></i> Variable, often full coverage</div>
+            <div class="sc">
+                <div class="sc-badge">Lab Funding</div>
+                <h4>Professor / BK21</h4>
+                <p>Lab-funded positions via BK21 or NRF project grants. The most common route to full PhD funding at top universities.</p>
+                <div class="sc-details">
+                    <div class="sc-detail"><i class="bi bi-building"></i> KAIST, SNU, POSTECH, UNIST</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Tuition waiver + monthly stipend</div>
+                    <div class="sc-detail"><i class="bi bi-person-check"></i> Professor relationship is key</div>
                 </div>
             </div>
-            <div class="sch-card">
-                <div class="sch-badge">New 2025</div>
+            <div class="sc">
+                <div class="sc-badge">New 2025</div>
                 <h4>Brain Pool+ (BP+)</h4>
-                <p>For top-tier scientists seeking full-time tenure-track positions at Korean R&D institutions. Up to 10-year tenure track.</p>
-                <div class="sch-card-details">
-                    <div class="sch-detail"><i class="bi bi-calendar-check"></i> 4+6 year track</div>
-                    <div class="sch-detail"><i class="bi bi-cash"></i> Up to ₩600M/year</div>
+                <p>For top-tier scientists seeking full-time tenure-track positions at Korean R&D institutions. Up to 10-year career track.</p>
+                <div class="sc-details">
+                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> 4+6 year tenure track</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Up to ₩600M/year total</div>
+                    <div class="sc-detail"><i class="bi bi-star"></i> ~5 spots nationwide</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ── PROCESS ── -->
 <section id="process" class="process">
     <div class="process-grid">
         <div>
             <span class="section-label">How It Works</span>
-            <h2 class="section-title">From zero to offer letter — step by step.</h2>
-            <div class="process-steps">
+            <h2 class="section-title">From zero to offer letter.</h2>
+            <div class="steps">
                 <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-content">
-                        <h4>Free Initial Consultation</h4>
-                        <p>We assess your academic background, research interests, and target programs to create a personalized strategy.</p>
-                    </div>
+                    <div class="step-n">1</div>
+                    <div><h4>Free Initial Consultation</h4><p>We assess your academic background, research interests, and target programs to build a personalized strategy at no cost.</p></div>
                 </div>
                 <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-content">
-                        <h4>Profile Building & Documentation</h4>
-                        <p>We work with you on your CV, SOP, research proposal, and all supporting documents through multiple revision cycles.</p>
-                    </div>
+                    <div class="step-n">2</div>
+                    <div><h4>Profile Building & Documentation</h4><p>We work with you on your CV, SOP, research proposal, and all supporting documents through multiple revision rounds.</p></div>
                 </div>
                 <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-content">
-                        <h4>Professor Outreach Strategy</h4>
-                        <p>We identify the right professors for your profile and help craft professional, targeted cold emails that get responses.</p>
-                    </div>
+                    <div class="step-n">3</div>
+                    <div><h4>Professor Outreach Strategy</h4><p>We identify the right professors for your profile and help craft targeted cold emails that actually get responses from Korean PIs.</p></div>
                 </div>
                 <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-content">
-                        <h4>Application Submission Support</h4>
-                        <p>We guide you through scholarship and university portals, deadlines, and document checklists until you hit submit.</p>
-                    </div>
+                    <div class="step-n">4</div>
+                    <div><h4>Application & Scholarship Submission</h4><p>We guide you through university and scholarship portals, deadlines, and full document checklists until you hit submit confidently.</p></div>
                 </div>
             </div>
         </div>
-        <div class="process-cta-block">
-            <div style="font-size:3.5rem; margin-bottom:1rem;">🎓</div>
-            <h3>Ready to Start Your Journey?</h3>
-            <p>Join hundreds of Bangladeshi students who have secured fully-funded positions at South Korea's top research universities with GradAssist.</p>
-            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-primary" style="margin-bottom:1rem;">
-                <i class="bi bi-facebook"></i> Connect on Facebook
-            </a>
-            <br>
-            <button class="btn-secondary" onclick="openChat()" style="margin-top:0.5rem;">
-                <i class="bi bi-robot"></i> Ask AI Assistant First
-            </button>
+        <div>
+            <div class="cta-box">
+                <div class="emoji">🎓</div>
+                <h3>Ready to Start?</h3>
+                <p>Join hundreds of Bangladeshi students who secured fully-funded positions at South Korea's top research universities with GradAssist's help.</p>
+                <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-p" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
+                    <i class="bi bi-facebook"></i> Connect on Facebook
+                </a>
+                <div class="cta-divider">— or get instant answers —</div>
+                <button class="btn-s" onclick="openChat()" style="width:100%;justify-content:center;">
+                    <i class="bi bi-robot"></i> Ask AI Assistant Free
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
     <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-logo">
             <div class="logo">
                 <span class="logo-main">GradAssist</span>
                 <span class="logo-sub">Academic & Research Advisory</span>
             </div>
-            <p>Empowering Bangladeshi researchers to access world-class MS and PhD programs in South Korea. Founded by researchers, for researchers.</p>
+            <p class="footer-desc">Empowering Bangladeshi researchers to access world-class MS and PhD programs in South Korea. Founded by researchers, for researchers.</p>
         </div>
         <div class="footer-col">
             <h5>Services</h5>
@@ -711,208 +558,174 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 GradAssist. All rights reserved. | Strategic Academic Advisory for South Korea</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <p>© 2025 GradAssist. All rights reserved. Strategic Academic Advisory for South Korea.</p>
+        <div class="socials">
+            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
         </div>
     </div>
 </footer>
 
-<!-- API KEY MODAL -->
-<div class="modal-overlay" id="apiModal">
-    <div class="modal-box">
-        <div style="font-size:2.5rem; margin-bottom:0.5rem;">🤖</div>
-        <h3>Enable AI Assistant</h3>
-        <p>To activate the AI Knowledge Base, please enter your Anthropic API key. Your key is stored only in your browser and never sent to our servers.</p>
-        <input type="password" class="modal-input" id="apiKeyInput" placeholder="sk-ant-api03-..." autocomplete="off" />
-        <p class="modal-note">Get a free API key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Free tier includes $5 credit.</p>
-        <div style="display:flex; gap:10px;">
-            <button class="btn-primary" onclick="saveApiKey()" style="flex:1;">Activate <i class="bi bi-lightning-charge-fill"></i></button>
-            <button class="btn-secondary" onclick="closeModal()" style="flex:0.5;">Cancel</button>
+<!-- ── BACKEND CONFIG MODAL ── -->
+<div class="overlay" id="configModal">
+    <div class="modal">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚙️</div>
+        <h3>Connect AI Backend</h3>
+        <p>Enter your Hugging Face Space URL to connect the AI chatbot. This is free — just deploy the backend files to HuggingFace Spaces.</p>
+        <label>Your Hugging Face Space URL</label>
+        <input type="url" id="hfUrlInput" placeholder="https://YOUR-USERNAME-gradassist-ai.hf.space" autocomplete="off"/>
+        <div class="modal-hint">
+            Deploy the backend folder to HF Spaces (free). Your URL will look like:<br>
+            <code>https://yourusername-gradassist-ai.hf.space</code><br><br>
+            📖 See the included <strong>SETUP_GUIDE.md</strong> for step-by-step instructions.
+        </div>
+        <div class="modal-btns">
+            <button class="btn-p" onclick="saveHFUrl()" style="flex:1;">Connect <i class="bi bi-lightning-charge-fill"></i></button>
+            <button class="btn-s" onclick="closeConfigModal()">Cancel</button>
         </div>
     </div>
 </div>
 
-<!-- CHAT WIDGET -->
-<div id="chat-widget">
+<!-- ── CHAT WIDGET ── -->
+<div id="chat-wrap">
     <div class="chat-panel" id="chatPanel">
         <div class="chat-head">
-            <div class="chat-head-info">
-                <div class="chat-avatar"><i class="bi bi-robot"></i></div>
+            <div class="ch-info">
+                <div class="ch-avatar"><i class="bi bi-robot"></i></div>
                 <div>
-                    <div class="chat-head-name">GradAssist AI</div>
-                    <div class="chat-head-status"><span class="status-dot"></span> Knowledge Base Active</div>
+                    <div class="ch-name">GradAssist AI</div>
+                    <div class="ch-status" id="chatStatus"><span class="status-dot online"></span> Knowledge Base Active</div>
                 </div>
             </div>
-            <button class="chat-close" onclick="closeChat()"><i class="bi bi-x-lg"></i></button>
+            <button class="ch-close" onclick="closeChat()"><i class="bi bi-x-lg"></i></button>
         </div>
-        <div class="chat-disclaimer">⚡ Powered by Claude AI · Answers based on official scholarship data</div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="msg-row">
-                <div class="msg-bubble bot">
-                    👋 Hello! I'm the <strong>GradAssist AI Assistant</strong>.<br><br>
-                    I can answer questions about studying in South Korea — scholarships like GKS and Brain Pool, application requirements, professor outreach, and our services.<br><br>
+        <div class="chat-note">🤖 Powered by open-source AI (Qwen2.5) · Free · No login required</div>
+        <div class="chat-msgs" id="chatMsgs">
+            <div class="msg-r">
+                <div class="bubble bot">
+                    👋 Hi! I'm the <strong>GradAssist AI Assistant</strong>.<br><br>
+                    I can answer questions about studying in South Korea — GKS scholarships, Brain Pool program, professor outreach, application documents, and our services.<br><br>
                     What would you like to know?
                 </div>
             </div>
         </div>
-        <div class="chat-suggestions" id="suggestions">
-            <button class="sugg-btn" onclick="askSuggestion(this)">Brain Pool eligibility?</button>
-            <button class="sugg-btn" onclick="askSuggestion(this)">GKS vs professor funding</button>
-            <button class="sugg-btn" onclick="askSuggestion(this)">How to email a professor?</button>
-            <button class="sugg-btn" onclick="askSuggestion(this)">Application documents needed</button>
+        <div class="chat-chips" id="chatChips">
+            <div class="chip" onclick="askChip(this)">Brain Pool eligibility?</div>
+            <div class="chip" onclick="askChip(this)">GKS vs professor funding</div>
+            <div class="chip" onclick="askChip(this)">How to email a professor</div>
+            <div class="chip" onclick="askChip(this)">Documents needed</div>
         </div>
-        <div class="chat-input-area">
-            <input type="text" id="chatInput" placeholder="Ask about scholarships, applications..." />
-            <button class="send-btn" id="sendBtn" onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about scholarships, applications…" autocomplete="off"/>
+            <button class="send-btn" id="sendBtn" onclick="sendMsg()"><i class="bi bi-send-fill"></i></button>
+        </div>
+        <div class="chat-status-bar" id="chatStatusBar">
+            Connected to HF Space · <a href="#" onclick="openConfigModal();return false;">Change backend</a>
         </div>
     </div>
-    <button class="chat-fab" onclick="openChat()">
+    <button class="chat-fab" onclick="openChat()" title="Ask AI Advisor">
         <i class="bi bi-chat-text-fill"></i>
-        <div class="badge">AI</div>
+        <span class="fab-badge">AI</span>
     </button>
 </div>
 
 <script>
-// ── KNOWLEDGE BASE (system prompt) ──
-const KNOWLEDGE_BASE = `You are the GradAssist AI Assistant — a helpful, knowledgeable academic advisor specializing in helping Bangladeshi students pursue MS and PhD programs in South Korea.
+// ─────────────────────────────────────────────────────────────
+//  CONFIG
+// ─────────────────────────────────────────────────────────────
+// 🔧 IMPORTANT: Replace this with your actual HuggingFace Space URL after deployment
+// Format: https://YOUR-HF-USERNAME-gradassist-ai.hf.space
+let HF_BACKEND_URL = localStorage.getItem('gradassist_hf_url') || '';
 
-You work for GradAssist, a consultancy service founded by PhD researchers in South Korea. Your Facebook page is: https://www.facebook.com/GradAssistOfficialBD/
+const DEFAULT_HF_URL = 'https://GradAssist-gradassist-ai.hf.space'; // ← CHANGE THIS after HF deployment
 
-## YOUR SERVICES (always recommend these for personalized help):
-1. **Research Proposal Guidance** – Help developing clear, competitive research proposals
-2. **Academic CV Development** – Professional CV structuring for MS/PhD applications  
-3. **Scholarship Documentation Support** – Assistance with GKS, Brain Pool, and other Korean scholarship applications
-4. **MS & PhD Application Strategy** – Program selection, professor outreach, application planning
-5. **SOP Structuring & Editing** – Strategic development of Statements of Purpose
-
-## BRAIN POOL PROGRAM KNOWLEDGE (2025 Official Details):
-
-### Brain Pool (BP) – Institution Type (NEW 2025):
-- **Target**: R&D institutions inviting overseas PhD holders
-- **Scale**: ~8 projects selected
-- **Funding**: KRW 300–900 million/year  
-- **Duration**: 3 years (until Dec 31, 2027), starting July 1, 2025
-- **Eligible**: PhD holders residing overseas at time of employment
-- **Salary**: KRW 5M–25M/month (must match original institution salary)
-- **Key rule**: At least 60% of total budget must go to overseas scientist salaries
-- **Application deadline**: March 28, 2025 (PI), April 1, 2025 (Institution approval)
-- **Fields**: All science & technology (natural sciences, life sciences, medicine, engineering, ICT convergence)
-
-### Brain Pool (BP) – Individual Type:
-- **Target**: Individual PIs at Korean institutions inviting specific overseas researchers
-- **Scale**: ~144 projects selected
-- **Funding**: Up to KRW 350 million/year
-- **Duration**: 1–3 years (until Dec 31, 2027)
-- **Salary**: KRW 5M–25M/month + research materials KRW 1M/year
-- **Application deadline**: May 30, 2025 (PI), June 3, 2025 (Institution)
-- **Project start**: After August 1, 2025
-- **Preferred fields**: 12 National Strategic Technologies (AI, Semiconductors, Quantum, Bio, etc.)
-- **Re-application**: Allowed for projects ending 2024-2025 (same PI + scientist, once only)
-- **IMPORTANT**: Overseas scientist must enter Korea before research start date
-
-### Brain Pool+ (BP+):
-- **Target**: Top-tier overseas scientists for full-time tenure-track positions
-- **Scale**: ~5 projects selected
-- **Funding**: Up to KRW 600 million/year
-- **Duration**: Up to 10 years (4+6 year structure)
-- **Application deadline**: May 30, 2025; Project start: After August 1, 2025
-- **Note**: Invited scientist becomes the PI after contract signing
-
-### BP Eligibility Requirements (all types):
-- Must hold a PhD (exception: 5+ years industry R&D experience for corporate placements)
-- Must reside OUTSIDE Korea at application date
-- Cannot be: PhD candidates, temporarily abroad, or affiliated with Korean institution
-- Must provide: Certificate of Residency, PhD certificate, salary proof (past 1 year), Letter of Acceptance
-- Documents must be in Korean or English (notarized translation required for other languages)
-
-### BP Evaluation Criteria (Individual Type - 100 points total):
-- Research excellence & creativity: 10 pts
-- Research utilization potential: 10 pts  
-- Expected research outcomes: 10 pts
-- BP candidate's research plan: 10 pts
-- Host PI competence: 10 pts
-- Host institution support: 10 pts
-- BP candidate responsibility: 20 pts
-- BP candidate competency: 20 pts
-
-### Key BP Rules:
-- Each invited scientist may only apply for ONE project
-- All publications must acknowledge the host R&D institution
-- Overseas business trips >6 months require NRF approval
-- Application via IRIS system (iris.go.kr)
-- Contact NRF: BP: +82-2-3460-5744 | BP+: +82-2-3460-5742
-- English inquiries: ghd_nrf@etners.com | +82-70-8806-5191
-
-## KOREAN SCHOLARSHIPS OVERVIEW:
-- **GKS (KGSP)**: Korean Government Scholarship — full tuition + ₩900K-1M/month living stipend + airfare
-- **BK21**: Brain Korea 21 — professor-led lab funding for graduate students
-- **NRF Projects**: National Research Foundation grants — common source of graduate student stipends
-- **University Direct**: Many top universities (KAIST, SNU, POSTECH, UNIST, GIST) offer direct scholarships
-
-## TOP KOREAN UNIVERSITIES FOR RESEARCH:
-- KAIST, Seoul National University (SNU), POSTECH, UNIST, GIST, DGIST, Yonsei, Korea University, Sungkyunkwan University (SKKU), Hanyang University
-
-## ADVICE GUIDELINES:
-- Be encouraging and supportive — most students are nervous about this process
-- Always recommend contacting GradAssist directly via Facebook for personalized help
-- For Brain Pool: clarify this is for researchers with PhDs, not typical students
-- For typical MS/PhD students, focus on GKS, professor outreach, and BK21 funding
-- Emphasize the importance of a strong research proposal and professor relationship
-- Korean PIs value: clear research focus, relevant publications/projects, professional communication
-- Cold emails to professors should be: concise (max 300 words), research-specific, professional
-
-Respond in a helpful, warm, and professional tone. Use markdown formatting (bold, bullet points) for clarity. If someone asks something outside your knowledge base, guide them to contact GradAssist directly.`;
-
-// ── STATE ──
-let apiKey = localStorage.getItem('gradassist_api_key') || '';
-let isTyping = false;
+// ─────────────────────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────────────────────
 let conversation = [];
+let isBusy = false;
 
-// ── CHAT UI ──
+// ─────────────────────────────────────────────────────────────
+//  NAV
+// ─────────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
+});
+function toggleMobileMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+function closeMobileMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+
+// ─────────────────────────────────────────────────────────────
+//  CHAT OPEN / CLOSE
+// ─────────────────────────────────────────────────────────────
 function openChat() {
-    if (!apiKey) {
-        document.getElementById('apiModal').classList.add('open');
+    const backendUrl = HF_BACKEND_URL || DEFAULT_HF_URL;
+    if (!HF_BACKEND_URL && DEFAULT_HF_URL.includes('YOUR-USERNAME')) {
+        // No backend configured yet — show config modal
+        document.getElementById('configModal').classList.add('open');
         return;
     }
     document.getElementById('chatPanel').classList.add('open');
     document.getElementById('chatInput').focus();
+    checkBackendHealth();
+}
+function closeChat() { document.getElementById('chatPanel').classList.remove('open'); }
+
+// ─────────────────────────────────────────────────────────────
+//  BACKEND HEALTH CHECK
+// ─────────────────────────────────────────────────────────────
+async function checkBackendHealth() {
+    const url = HF_BACKEND_URL || DEFAULT_HF_URL;
+    if (url.includes('YOUR-USERNAME')) return;
+    const statusEl = document.getElementById('chatStatus');
+    statusEl.innerHTML = '<span class="status-dot loading"></span> Connecting…';
+    try {
+        const res = await fetch(`${url}/health`, { signal: AbortSignal.timeout(8000) });
+        if (res.ok) {
+            const data = await res.json();
+            if (data.model_loaded) {
+                statusEl.innerHTML = '<span class="status-dot online"></span> AI Ready';
+            } else {
+                statusEl.innerHTML = '<span class="status-dot loading"></span> Model loading (30s)…';
+                setTimeout(checkBackendHealth, 10000);
+            }
+        }
+    } catch {
+        statusEl.innerHTML = '<span class="status-dot" style="background:#e53"></span> Backend offline';
+        document.getElementById('chatStatusBar').innerHTML = '⚠️ Backend unreachable · <a href="#" onclick="openConfigModal();return false;">Check URL</a>';
+    }
 }
 
-function closeChat() {
-    document.getElementById('chatPanel').classList.remove('open');
-}
-
-function saveApiKey() {
-    const key = document.getElementById('apiKeyInput').value.trim();
-    if (!key || !key.startsWith('sk-')) {
-        document.getElementById('apiKeyInput').style.borderColor = 'var(--crimson)';
-        document.getElementById('apiKeyInput').placeholder = 'Please enter a valid API key (starts with sk-)';
+// ─────────────────────────────────────────────────────────────
+//  CONFIG MODAL
+// ─────────────────────────────────────────────────────────────
+function openConfigModal() { document.getElementById('configModal').classList.add('open'); }
+function closeConfigModal() { document.getElementById('configModal').classList.remove('open'); }
+function saveHFUrl() {
+    const val = document.getElementById('hfUrlInput').value.trim().replace(/\/$/, '');
+    if (!val || !val.startsWith('https://')) {
+        document.getElementById('hfUrlInput').style.borderColor = 'var(--crimson)';
         return;
     }
-    apiKey = key;
-    localStorage.setItem('gradassist_api_key', key);
-    closeModal();
+    HF_BACKEND_URL = val;
+    localStorage.setItem('gradassist_hf_url', val);
+    closeConfigModal();
     document.getElementById('chatPanel').classList.add('open');
     document.getElementById('chatInput').focus();
+    checkBackendHealth();
 }
+document.getElementById('configModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('configModal')) closeConfigModal();
+});
+document.getElementById('hfUrlInput').addEventListener('keypress', e => { if(e.key==='Enter') saveHFUrl(); });
 
-function closeModal() {
-    document.getElementById('apiModal').classList.remove('open');
-}
-
-function askSuggestion(btn) {
-    document.getElementById('chatInput').value = btn.textContent;
-    document.getElementById('suggestions').style.display = 'none';
-    sendMessage();
-}
-
-function addMessage(text, role) {
-    const container = document.getElementById('chatMessages');
+// ─────────────────────────────────────────────────────────────
+//  MESSAGING
+// ─────────────────────────────────────────────────────────────
+function addMsg(text, role) {
+    const container = document.getElementById('chatMsgs');
     const row = document.createElement('div');
-    row.className = `msg-row ${role === 'user' ? 'user' : ''}`;
+    row.className = `msg-r ${role === 'user' ? 'user' : ''}`;
     const bubble = document.createElement('div');
-    bubble.className = `msg-bubble ${role === 'user' ? 'user' : 'bot'}`;
+    bubble.className = `bubble ${role === 'user' ? 'user' : 'bot'}`;
     if (role === 'assistant') {
         bubble.innerHTML = marked.parse(text);
     } else {
@@ -921,108 +734,87 @@ function addMessage(text, role) {
     row.appendChild(bubble);
     container.appendChild(row);
     container.scrollTop = container.scrollHeight;
-    return row;
 }
 
 function showTyping() {
-    const container = document.getElementById('chatMessages');
+    const container = document.getElementById('chatMsgs');
     const row = document.createElement('div');
-    row.className = 'msg-row';
-    row.id = 'typingIndicator';
-    row.innerHTML = `<div class="msg-bubble bot"><div class="typing"><span></span><span></span><span></span></div></div>`;
+    row.className = 'msg-r'; row.id = 'typingRow';
+    row.innerHTML = '<div class="bubble bot"><div class="typing-bbl"><span></span><span></span><span></span></div></div>';
     container.appendChild(row);
     container.scrollTop = container.scrollHeight;
 }
+function removeTyping() { document.getElementById('typingRow')?.remove(); }
 
-function removeTyping() {
-    const el = document.getElementById('typingIndicator');
-    if (el) el.remove();
+function askChip(el) {
+    document.getElementById('chatInput').value = el.textContent;
+    document.getElementById('chatChips').style.display = 'none';
+    sendMsg();
 }
 
-async function sendMessage() {
+async function sendMsg() {
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
-    if (!text || isTyping) return;
+    if (!text || isBusy) return;
 
-    if (!apiKey) { openChat(); return; }
+    const backendUrl = HF_BACKEND_URL || DEFAULT_HF_URL;
+    if (backendUrl.includes('YOUR-USERNAME')) {
+        openConfigModal(); return;
+    }
 
     input.value = '';
-    document.getElementById('suggestions').style.display = 'none';
-    addMessage(text, 'user');
+    document.getElementById('chatChips').style.display = 'none';
+    addMsg(text, 'user');
     conversation.push({ role: 'user', content: text });
 
-    isTyping = true;
+    isBusy = true;
     document.getElementById('sendBtn').disabled = true;
     showTyping();
 
     try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const res = await fetch(`${backendUrl}/chat`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': apiKey,
-                'anthropic-version': '2023-06-01',
-                'anthropic-dangerous-direct-browser-access': 'true'
-            },
-            body: JSON.stringify({
-                model: 'claude-haiku-4-5-20251001',
-                max_tokens: 800,
-                system: KNOWLEDGE_BASE,
-                messages: conversation.slice(-10)
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: conversation.slice(-8) }),
+            signal: AbortSignal.timeout(60000) // 60s timeout for CPU inference
         });
 
-        const data = await response.json();
         removeTyping();
 
-        if (data.error) {
-            if (data.error.type === 'authentication_error') {
-                addMessage('❌ Invalid API key. Please click the chat button again to re-enter your key.', 'assistant');
-                apiKey = '';
-                localStorage.removeItem('gradassist_api_key');
-            } else {
-                addMessage(`⚠️ Error: ${data.error.message}. Please try again.`, 'assistant');
-            }
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            addMsg(`⚠️ ${err.error || 'Server error. Please try again.'}`, 'assistant');
         } else {
-            const reply = data.content[0].text;
+            const data = await res.json();
+            const reply = data.response || 'Sorry, I could not generate a response. Please try again.';
             conversation.push({ role: 'assistant', content: reply });
-            addMessage(reply, 'assistant');
+            addMsg(reply, 'assistant');
         }
     } catch (err) {
         removeTyping();
-        addMessage('⚠️ Connection error. Please check your internet and try again.', 'assistant');
+        if (err.name === 'TimeoutError') {
+            addMsg('⏳ Response is taking longer than usual (CPU inference can take up to 60s). Please try again or ask a shorter question.', 'assistant');
+        } else {
+            addMsg('⚠️ Could not reach the AI backend. Make sure your Hugging Face Space is running.', 'assistant');
+        }
     }
 
-    isTyping = false;
+    isBusy = false;
     document.getElementById('sendBtn').disabled = false;
     input.focus();
 }
 
-// ── MOBILE NAV ──
-function toggleMobileNav(btn) {
-    const links = document.querySelector('.nav-links');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '70px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'white';
-    links.style.padding = '1.5rem 5%';
-    links.style.borderTop = '1px solid #eee';
-    links.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-}
+document.getElementById('chatInput').addEventListener('keypress', e => { if(e.key === 'Enter') sendMsg(); });
 
-// ── KEYBOARD ──
-document.getElementById('chatInput').addEventListener('keypress', e => {
-    if (e.key === 'Enter') sendMessage();
-});
-document.getElementById('apiKeyInput').addEventListener('keypress', e => {
-    if (e.key === 'Enter') saveApiKey();
-});
-document.getElementById('apiModal').addEventListener('click', e => {
-    if (e.target === document.getElementById('apiModal')) closeModal();
-});
+// Pre-fill HF URL input if already saved
+if (HF_BACKEND_URL) document.getElementById('hfUrlInput').value = HF_BACKEND_URL;
+
+// Update status bar with current URL info
+if (HF_BACKEND_URL) {
+    document.getElementById('chatStatusBar').innerHTML = `Connected: ${new URL(HF_BACKEND_URL).hostname} · <a href="#" onclick="openConfigModal();return false;">Change</a>`;
+} else {
+    document.getElementById('chatStatusBar').innerHTML = `⚙️ <a href="#" onclick="openConfigModal();return false;">Configure AI backend</a> (free HuggingFace Space)`;
+}
 </script>
 </body>
 </html>
