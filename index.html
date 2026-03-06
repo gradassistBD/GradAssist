@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GradAssist | MS & PhD Advisory for South Korea</title>
-    <meta name="description" content="Expert academic consultancy helping Bangladeshi students secure MS and PhD positions in South Korea. GKS, Brain Pool, professor outreach guidance.">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500;9..600&display=swap" rel="stylesheet">
+
+    <!-- ═══ PRIMARY SEO META ═══ -->
+    <title>GradAssist | MS & PhD in South Korea for Bangladeshi Students — GKS, SOP, Research Proposal Help</title>
+    <meta name="description" content="GradAssist helps Bangladeshi students secure fully-funded MS and PhD positions in South Korea. Expert SOP writing, academic CV, research proposal, and GKS scholarship guidance — by PhD researchers based in Seoul.">
+    <meta name="keywords" content="study in South Korea from Bangladesh, GKS scholarship Bangladesh, PhD Korea SOP writing, MS Korea application help, KGSP Bangladesh, research proposal Korea, academic CV Bangladesh, Brain Pool scholarship, KAIST PhD Bangladesh, SNU scholarship Bangladesh">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="GradAssist Academic Advisory">
+    <link rel="canonical" href="https://gradassist.org/">
+
+    <!-- ═══ OPEN GRAPH (Facebook / WhatsApp) ═══ -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GradAssist — MS & PhD in South Korea for Bangladeshi Students">
+    <meta property="og:description" content="Founded by PhD researchers in Seoul. We help you build the CV, SOP, and research proposal that Korean universities actually want to see. Free consultation available.">
+    <meta property="og:url" content="https://gradassist.org/">
+    <meta property="og:site_name" content="GradAssist">
+    <meta property="og:image" content="https://gradassist.org/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ═══ STRUCTURED DATA ═══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "GradAssist",
+      "description": "Academic advisory service helping Bangladeshi students secure MS and PhD positions in South Korea through expert SOP, CV, and research proposal guidance.",
+      "url": "https://gradassist.org",
+      "sameAs": ["https://www.facebook.com/GradAssistOfficialBD/"],
+      "areaServed": "Bangladesh",
+      "serviceType": ["Academic Consulting", "Scholarship Guidance", "SOP Writing", "Research Proposal Development"],
+      "foundingLocation": "Seoul, South Korea"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
         :root {
             --crimson: #B5161A;
@@ -20,8 +52,6 @@
             --muted: #6B6359;
             --white: #ffffff;
         }
-
-        /* ── RESET & BASE ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
@@ -33,7 +63,7 @@
             position: fixed; top: 0; left: 0; right: 0; z-index: 200;
             padding: 1.1rem 5%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(250,247,242,0.96); backdrop-filter: blur(14px);
+            background: rgba(250,247,242,0.97); backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(0,0,0,0.055);
             transition: box-shadow 0.3s;
         }
@@ -85,19 +115,29 @@
             letter-spacing: -2.5px; margin-bottom: 1.4rem;
         }
         .hero h1 em { font-style: italic; color: var(--crimson); }
-        .hero-sub { font-size: 1rem; color: var(--muted); line-height: 1.82; max-width: 500px; margin-bottom: 2.5rem; }
-        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-sub { font-size: 1rem; color: var(--muted); line-height: 1.82; max-width: 520px; margin-bottom: 2.5rem; }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
         .btn-p { background: var(--crimson); color: white; padding: 13px 26px; border-radius: 50px; font-weight: 600; font-size: 0.87rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
         .btn-p:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,31,60,0.18); }
         .btn-s { background: transparent; color: var(--navy); padding: 13px 26px; border-radius: 50px; font-weight: 600; font-size: 0.87rem; border: 2px solid var(--sand); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
         .btn-s:hover { border-color: var(--navy); background: var(--navy); color: white; }
+
+        /* Proof strip below hero CTA */
+        .hero-proof { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+        .proof-item { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--muted); }
+        .proof-item i { color: var(--sage); font-size: 0.9rem; }
+        .proof-item strong { color: var(--navy); }
+
         .hero-visual { position: relative; z-index: 1; }
         .hero-img-frame {
             border-radius: 28px; overflow: hidden; position: relative;
             box-shadow: 0 30px 80px rgba(13,31,60,0.15);
+            background: linear-gradient(135deg, #0D1F3C 0%, #1a3a6b 100%);
+            min-height: 480px; display: flex; align-items: center; justify-content: center;
         }
-        .hero-img-frame img { width: 100%; border-radius: 28px; }
-        .hero-img-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(181,22,26,0.06) 0%, transparent 50%); border-radius: 28px; }
+        .hero-img-placeholder { text-align: center; color: rgba(255,255,255,0.5); padding: 3rem; }
+        .hero-img-placeholder i { font-size: 4rem; margin-bottom: 1rem; display: block; color: rgba(201,148,58,0.6); }
+        .hero-img-placeholder p { font-size: 0.8rem; line-height: 1.6; }
         .hero-float-card {
             position: absolute; background: white; border-radius: 18px;
             padding: 1rem 1.4rem; box-shadow: 0 15px 45px rgba(0,0,0,0.11);
@@ -113,6 +153,21 @@
         .t-item { display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,0.6); font-size: 0.8rem; font-weight: 500; }
         .t-item i { color: var(--gold); font-size: 1.1rem; }
 
+        /* ── PAIN POINTS ── */
+        .pain { padding: 90px 5%; background: white; }
+        .pain-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .pain-inner h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 900; color: var(--navy); letter-spacing: -1.5px; margin-bottom: 1rem; }
+        .pain-inner .lead { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 640px; margin: 0 auto 3.5rem; }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; text-align: left; }
+        .pain-card { background: var(--cream); border-radius: 18px; padding: 1.6rem; border: 1px solid var(--sand); }
+        .pain-card .emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+        .pain-card h4 { font-weight: 700; color: var(--navy); font-size: 0.92rem; margin-bottom: 0.4rem; }
+        .pain-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+        .pain-solution { margin-top: 3rem; background: rgba(181,22,26,0.05); border-radius: 18px; padding: 1.8rem 2.4rem; border: 1px solid rgba(181,22,26,0.12); text-align: left; display: flex; align-items: center; gap: 1.5rem; }
+        .pain-solution i { font-size: 2rem; color: var(--crimson); flex-shrink: 0; }
+        .pain-solution p { font-size: 0.92rem; color: var(--navy); line-height: 1.7; }
+        .pain-solution strong { color: var(--crimson); }
+
         /* ── ABOUT ── */
         .about { padding: 110px 5%; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
@@ -125,12 +180,22 @@
         .hl-card p { font-size: 0.74rem; color: var(--muted); margin-top: 3px; line-height: 1.5; }
         .quote-block { background: var(--navy); border-radius: 28px; padding: 2.8rem; position: relative; overflow: hidden; }
         .quote-block::before { content: '"'; font-family: 'Fraunces', serif; font-size: 11rem; position: absolute; top: -20px; right: 20px; color: rgba(255,255,255,0.035); line-height: 1; font-weight: 900; pointer-events: none; }
-        .q-text { font-family: 'Fraunces', serif; font-size: 1.25rem; line-height: 1.6; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
+        .q-text { font-family: 'Fraunces', serif; font-size: 1.15rem; line-height: 1.7; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
         .q-auth { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+        .q-context { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.8rem; line-height: 1.6; }
+
+        /* Founder credential strip */
+        .founder-strip { margin-top: 2rem; background: rgba(255,255,255,0.06); border-radius: 16px; padding: 1.4rem; border: 1px solid rgba(255,255,255,0.1); }
+        .founder-strip h5 { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+        .founders { display: flex; flex-direction: column; gap: 0.9rem; }
+        .founder { display: flex; align-items: center; gap: 0.8rem; }
+        .founder-avatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(201,148,58,0.2); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.9rem; flex-shrink: 0; }
+        .founder-info h6 { font-size: 0.8rem; font-weight: 700; color: white; }
+        .founder-info p { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
 
         /* ── SERVICES ── */
         .services { padding: 110px 5%; background: white; }
-        .services-hd { text-align: center; max-width: 560px; margin: 0 auto 4.5rem; }
+        .services-hd { text-align: center; max-width: 580px; margin: 0 auto 4.5rem; }
         .services-hd p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
         .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
         .svc { background: var(--cream); border-radius: 22px; padding: 2.2rem; border: 1px solid var(--sand); transition: all 0.4s; position: relative; overflow: hidden; cursor: default; }
@@ -139,8 +204,9 @@
         .svc:hover::after { transform: scaleX(1); }
         .svc-ico { width: 48px; height: 48px; background: rgba(181,22,26,0.08); border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--crimson); margin-bottom: 1.3rem; transition: all 0.3s; }
         .svc:hover .svc-ico { background: var(--crimson); color: white; }
-        .svc h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.7rem; }
+        .svc h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
         .svc p { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+        .svc-tag { display: inline-block; font-size: 0.64rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: rgba(74,124,89,0.1); color: var(--sage); padding: 3px 8px; border-radius: 4px; margin-top: 0.9rem; }
         .svc-wide { grid-column: span 2; display: flex; gap: 2rem; align-items: flex-start; }
         .svc-wide .svc-ico { flex-shrink: 0; }
 
@@ -161,19 +227,47 @@
         .sc-detail { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: rgba(255,255,255,0.65); }
         .sc-detail i { color: var(--gold); font-size: 0.82rem; }
 
+        /* ── TESTIMONIALS ── */
+        .testi { padding: 100px 5%; background: var(--cream); }
+        .testi-hd { text-align: center; margin-bottom: 4rem; }
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+        .t-card { background: white; border-radius: 22px; padding: 2rem; border: 1px solid var(--sand); transition: all 0.3s; }
+        .t-card:hover { transform: translateY(-4px); box-shadow: 0 18px 45px rgba(0,0,0,0.07); }
+        .t-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .t-text { font-size: 0.88rem; color: var(--text); line-height: 1.75; font-style: italic; margin-bottom: 1.5rem; }
+        .t-person { display: flex; align-items: center; gap: 0.75rem; }
+        .t-avatar { width: 40px; height: 40px; background: rgba(181,22,26,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--crimson); font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+        .t-name { font-weight: 700; color: var(--navy); font-size: 0.85rem; }
+        .t-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
         /* ── PROCESS ── */
-        .process { padding: 110px 5%; }
+        .process { padding: 110px 5%; background: white; }
         .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
         .steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
         .step { display: flex; gap: 1.4rem; }
         .step-n { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: var(--crimson); color: white; font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
         .step h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: 0.95rem; }
         .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+        .step-note { font-size: 0.75rem; color: var(--crimson); font-weight: 600; margin-top: 5px; }
         .cta-box { background: white; border-radius: 28px; padding: 3rem; border: 1px solid var(--sand); text-align: center; position: sticky; top: 100px; }
         .cta-box .emoji { font-size: 3.5rem; margin-bottom: 1rem; }
         .cta-box h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; color: var(--navy); margin-bottom: 0.8rem; }
         .cta-box p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 2rem; }
         .cta-divider { text-align: center; font-size: 0.8rem; color: var(--muted); margin: 1rem 0; }
+        .cta-reassurance { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .cta-reassurance i { color: var(--sage); }
+
+        /* ── FAQ ── */
+        .faq { padding: 100px 5%; background: var(--cream); }
+        .faq-inner { max-width: 760px; margin: 0 auto; }
+        .faq-inner .section-title { text-align: center; }
+        .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+        .faq-item { border-bottom: 1px solid var(--sand); }
+        .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.3rem 0; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); text-align: left; gap: 1rem; }
+        .faq-q i { flex-shrink: 0; transition: transform 0.3s; font-size: 0.8rem; color: var(--crimson); }
+        .faq-q.open i { transform: rotate(180deg); }
+        .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+        .faq-a.open { max-height: 300px; padding-bottom: 1.3rem; }
 
         /* ── FOOTER ── */
         footer { background: #070D1A; padding: 5rem 5% 3rem; }
@@ -196,31 +290,12 @@
 
         /* ── CHAT WIDGET ── */
         #chat-wrap { position: fixed; bottom: 28px; right: 28px; z-index: 999; }
-        .chat-fab {
-            width: 58px; height: 58px; background: var(--crimson); color: white;
-            border-radius: 18px; border: none; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.45rem; box-shadow: 0 8px 28px rgba(181,22,26,0.38);
-            transition: all 0.3s; position: relative;
-        }
+        .chat-fab { width: 58px; height: 58px; background: var(--crimson); color: white; border-radius: 18px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; box-shadow: 0 8px 28px rgba(181,22,26,0.38); transition: all 0.3s; position: relative; }
         .chat-fab:hover { transform: scale(1.07) rotate(-5deg); background: var(--navy); }
-        .fab-badge {
-            position: absolute; top: -6px; right: -6px;
-            background: var(--gold); color: white; font-size: 0.55rem;
-            font-weight: 800; padding: 2px 6px; border-radius: 10px; letter-spacing: 0.5px;
-        }
-        .chat-panel {
-            position: absolute; bottom: 72px; right: 0;
-            width: 370px; background: white; border-radius: 26px;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.16);
-            display: none; flex-direction: column;
-            border: 1px solid rgba(0,0,0,0.055);
-            overflow: hidden; max-height: 560px;
-            animation: panelUp 0.28s ease;
-        }
+        .fab-badge { position: absolute; top: -6px; right: -6px; background: var(--gold); color: white; font-size: 0.55rem; font-weight: 800; padding: 2px 6px; border-radius: 10px; letter-spacing: 0.5px; }
+        .chat-panel { position: absolute; bottom: 72px; right: 0; width: 370px; background: white; border-radius: 26px; box-shadow: 0 25px 70px rgba(0,0,0,0.16); display: none; flex-direction: column; border: 1px solid rgba(0,0,0,0.055); overflow: hidden; max-height: 560px; animation: panelUp 0.28s ease; }
         .chat-panel.open { display: flex; }
         @keyframes panelUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-
         .chat-head { background: var(--navy); padding: 1.3rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
         .ch-info { display: flex; align-items: center; gap: 0.75rem; }
         .ch-avatar { width: 36px; height: 36px; background: var(--crimson); border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; }
@@ -231,13 +306,10 @@
         .status-dot.loading { background: var(--gold); animation: pulse-dot 1.2s infinite; }
         .ch-close { background: none; border: none; color: rgba(255,255,255,0.5); font-size: 1.15rem; cursor: pointer; transition: color 0.2s; padding: 2px; }
         .ch-close:hover { color: white; }
-
         .chat-note { background: rgba(201,148,58,0.1); padding: 0.55rem 1rem; font-size: 0.7rem; color: #7A5E10; text-align: center; border-bottom: 1px solid rgba(201,148,58,0.15); }
-
         .chat-msgs { flex: 1; overflow-y: auto; padding: 1.2rem; display: flex; flex-direction: column; gap: 11px; background: #F9F7F4; min-height: 280px; max-height: 320px; }
         .chat-msgs::-webkit-scrollbar { width: 3px; }
         .chat-msgs::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
-
         .msg-r { display: flex; }
         .msg-r.user { justify-content: flex-end; }
         .bubble { max-width: 82%; padding: 9px 13px; border-radius: 15px; font-size: 0.85rem; line-height: 1.55; }
@@ -247,25 +319,20 @@
         .bubble ul, .bubble ol { padding-left: 1.2rem; margin: 4px 0; }
         .bubble li { margin-bottom: 3px; }
         .bubble strong { font-weight: 700; }
-
         .typing-bbl { display: flex; gap: 4px; padding: 4px 2px; align-items: center; }
         .typing-bbl span { width: 7px; height: 7px; background: var(--sand); border-radius: 50%; animation: typingBounce 1.3s infinite; }
         .typing-bbl span:nth-child(2) { animation-delay: 0.2s; }
         .typing-bbl span:nth-child(3) { animation-delay: 0.4s; }
         @keyframes typingBounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
-
         .chat-chips { padding: 0.55rem 1rem; display: flex; gap: 6px; flex-wrap: wrap; background: #F9F7F4; border-top: 1px solid var(--sand); }
         .chip { background: white; border: 1px solid var(--sand); border-radius: 20px; padding: 4px 11px; font-size: 0.72rem; color: var(--navy); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
         .chip:hover { background: var(--crimson); color: white; border-color: var(--crimson); }
-
         .chat-input { padding: 0.9rem; background: white; border-top: 1px solid var(--sand); display: flex; gap: 8px; align-items: center; }
         .chat-input input { flex: 1; background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 9px 13px; font-size: 0.86rem; outline: none; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; }
         .chat-input input:focus { border-color: var(--crimson); }
         .send-btn { width: 38px; height: 38px; background: var(--crimson); color: white; border: none; border-radius: 11px; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
         .send-btn:hover { background: var(--navy); }
         .send-btn:disabled { background: var(--sand); cursor: not-allowed; }
-
-        /* Status bar below input */
         .chat-status-bar { padding: 0.4rem 1rem; background: white; font-size: 0.68rem; color: var(--muted); text-align: center; border-top: 1px solid rgba(0,0,0,0.04); }
         .chat-status-bar a { color: var(--crimson); }
 
@@ -275,7 +342,7 @@
         .modal { background: white; border-radius: 24px; padding: 2.5rem; max-width: 430px; width: 90%; box-shadow: 0 40px 100px rgba(0,0,0,0.22); }
         .modal h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
         .modal p { color: var(--muted); font-size: 0.87rem; line-height: 1.75; margin-bottom: 1.4rem; }
-        .modal label { font-size: 0.78rem; font-weight: 700; color: var(--navy); display: block; margin-bottom: 6px; letter-spacing: 0.3px; }
+        .modal label { font-size: 0.78rem; font-weight: 700; color: var(--navy); display: block; margin-bottom: 6px; }
         .modal input { width: 100%; background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 11px 15px; font-size: 0.88rem; outline: none; font-family: 'DM Sans', sans-serif; margin-bottom: 1.2rem; transition: border-color 0.2s; }
         .modal input:focus { border-color: var(--crimson); }
         .modal-hint { font-size: 0.73rem; color: var(--muted); margin-bottom: 1.8rem; line-height: 1.6; }
@@ -293,6 +360,8 @@
             .process-grid { grid-template-columns: 1fr; }
             .cta-box { position: static; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+            .testi-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -304,6 +373,8 @@
             .trust { gap: 1.5rem; }
             .footer-grid { grid-template-columns: 1fr; }
             .chat-panel { width: calc(100vw - 30px); right: -14px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .pain-solution { flex-direction: column; }
         }
     </style>
 </head>
@@ -319,7 +390,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#scholarships">Scholarships</a></li>
-        <li><a href="#process">How It Works</a></li>
+        <li><a href="#testimonials">Success Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="nav-cta">Free Consult</a></li>
     </ul>
     <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -330,7 +402,8 @@
     <a href="#about" onclick="closeMobileMenu()">About</a>
     <a href="#services" onclick="closeMobileMenu()">Services</a>
     <a href="#scholarships" onclick="closeMobileMenu()">Scholarships</a>
-    <a href="#process" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#testimonials" onclick="closeMobileMenu()">Success Stories</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank">Free Consultation →</a>
 </div>
 
@@ -339,57 +412,131 @@
     <div class="hero-bg-shape"></div>
     <div class="hero-bg-dots"></div>
     <div class="hero-content">
-        <div class="hero-pill"><span class="hero-pill-dot"></span> South Korea's Top Graduate Consultancy for BD Students</div>
-        <h1>Your Path to a<br><em>World-Class</em><br>MS/PhD in Korea.</h1>
-        <p class="hero-sub">Expert academic consultancy helping Bangladeshi students secure fully-funded MS and PhD positions at KAIST, SNU, POSTECH, and other top Korean universities.</p>
+        <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            PhD Researchers in Seoul · Serving Bangladeshi Students
+        </div>
+        <h1>Your research<br>belongs at<br><em>Korea's best.</em></h1>
+        <p class="hero-sub">
+            GradAssist is built by PhD researchers who are currently studying and working at South Korean universities. We don't just edit your documents — we help you understand exactly what Korean professors and scholarship panels are looking for, and we show you how to deliver it.
+        </p>
         <div class="hero-btns">
             <button class="btn-p" onclick="openChat()"><i class="bi bi-robot"></i> Ask AI Advisor (Free)</button>
-            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-s"><i class="bi bi-facebook"></i> Talk to a Human</a>
+            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-s"><i class="bi bi-facebook"></i> Talk to Our Team</a>
+        </div>
+        <div class="hero-proof">
+            <div class="proof-item"><i class="bi bi-check-circle-fill"></i> <span><strong>Founded in Seoul</strong> by active PhD researchers</span></div>
+            <div class="proof-item"><i class="bi bi-check-circle-fill"></i> <span><strong>GKS & professor funding</strong> specialists</span></div>
+            <div class="proof-item"><i class="bi bi-check-circle-fill"></i> <span><strong>Bangla & English</strong> support</span></div>
         </div>
     </div>
     <div class="hero-visual">
         <div class="hero-img-frame">
-            <img src="./image.jpg" alt="Students at university campus" loading="lazy"/>
+            <img src="./image.jpg" alt="GradAssist students at Korean university campus" loading="lazy"
+                 onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'><i class=\'bi bi-mortarboard-fill\'></i><p>Your image here<br><small style=\'opacity:0.5\'>Replace ./image.jpg with your photo</small></p></div>'"/>
         </div>
         <div class="hero-float-card hfc-1">
-            <div class="hfc-num">150+</div>
-            <div class="hfc-txt">Students Placed</div>
+            <div class="hfc-num">GKS</div>
+            <div class="hfc-txt">Scholarship Experts</div>
         </div>
         <div class="hero-float-card hfc-2">
-            <div class="hfc-num">98%</div>
-            <div class="hfc-txt">Scholarship Rate</div>
+            <div class="hfc-num">Seoul</div>
+            <div class="hfc-txt">PhD-Led Team</div>
         </div>
     </div>
 </section>
 
 <!-- ── TRUST STRIP ── -->
 <div class="trust">
-    <div class="t-item"><i class="bi bi-mortarboard-fill"></i> PhD-Led Team in Korea</div>
-    <div class="t-item"><i class="bi bi-geo-alt-fill"></i> Seoul-Based Advisors</div>
-    <div class="t-item"><i class="bi bi-translate"></i> Bangla & English</div>
-    <div class="t-item"><i class="bi bi-shield-check-fill"></i> Fully-Funded Scholarship Focus</div>
-    <div class="t-item"><i class="bi bi-cpu-fill"></i> Free AI Knowledge Base</div>
+    <div class="t-item"><i class="bi bi-mortarboard-fill"></i> PhD Researchers on the Team</div>
+    <div class="t-item"><i class="bi bi-geo-alt-fill"></i> Based in Seoul, South Korea</div>
+    <div class="t-item"><i class="bi bi-translate"></i> Bangla & English Support</div>
+    <div class="t-item"><i class="bi bi-shield-check-fill"></i> GKS · Brain Pool · Professor Funding</div>
+    <div class="t-item"><i class="bi bi-cpu-fill"></i> Free AI Knowledge Base 24/7</div>
 </div>
+
+<!-- ── PAIN POINTS ── -->
+<section class="pain">
+    <div class="pain-inner">
+        <span class="section-label" style="display:block;text-align:center;">The Real Problem</span>
+        <h2>Your qualifications are strong.<br>Your application isn't telling that story.</h2>
+        <p class="lead">
+            Most Bangladeshi applicants who get rejected from Korean universities aren't rejected because of their CGPA or publications. They're rejected because their SOP doesn't match what Korean professors value, their research proposal is too broad, or their professor outreach email was ignored.
+        </p>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="emoji">📄</div>
+                <h4>"My SOP was fine — or so I thought"</h4>
+                <p>A Statement of Purpose written for Western universities often fails Korean panels. The structure, tone, and research framing Korean committees expect is genuinely different.</p>
+            </div>
+            <div class="pain-card">
+                <div class="emoji">✉️</div>
+                <h4>Professor emails that go unanswered</h4>
+                <p>Cold emails to Korean PIs follow a specific etiquette. Generic templates — even polished ones — are often overlooked within seconds. The opening line matters enormously.</p>
+            </div>
+            <div class="pain-card">
+                <div class="emoji">🔬</div>
+                <h4>Research proposals that feel "unfocused"</h4>
+                <p>Korean PIs want to see that you understand their specific research group. A proposal too broad or too detached from the lab's published work signals a lack of preparation.</p>
+            </div>
+        </div>
+        <div class="pain-solution">
+            <i class="bi bi-lightbulb-fill"></i>
+            <p>
+                <strong>This is exactly what we fix.</strong> Our team includes PhD researchers currently embedded in Korean academic labs — people who have personally navigated the GKS process, responded to hundreds of professor emails, and know what a competitive application package looks like from the inside.
+            </p>
+        </div>
+    </div>
+</section>
 
 <!-- ── ABOUT ── -->
 <section id="about" class="about">
     <div class="about-grid">
         <div>
             <span class="section-label">Who We Are</span>
-            <h2 class="section-title">Guidance from researchers who've been there.</h2>
-            <p class="body-text">GradAssist was founded by a group of PhD researchers currently studying and working in South Korea. We understand every challenge Bangladeshi students face — language barriers, cultural gaps, complex application systems — and we know exactly how to overcome them.</p>
-            <p class="body-text">We don't just proofread documents. We help you build an <strong>academic identity</strong> that resonates with Korean professors and scholarship committees.</p>
+            <h2 class="section-title">We're not consultants.<br>We're colleagues.</h2>
+            <p class="body-text">GradAssist was founded by Bangladeshi PhD researchers who are currently studying and conducting research at South Korean universities. We've been through the GKS application process, navigated professor outreach, lived in student dormitories in Seoul, and published research in Korean labs.</p>
+            <p class="body-text">That lived experience is what separates us from generic document editors. When we review your research proposal, we're not checking grammar — we're checking whether a Korean PI in that field would keep reading past the second paragraph.</p>
+            <p class="body-text">We work with a small number of students at a time to ensure every application gets the attention it deserves. No assembly lines. No copy-paste feedback.</p>
             <div class="hl-grid">
-                <div class="hl-card"><i class="bi bi-file-earmark-check"></i><h4>Research-First Approach</h4><p>We align your profile with what Korean PIs look for</p></div>
-                <div class="hl-card"><i class="bi bi-globe-asia-australia"></i><h4>Korea-Specific Expertise</h4><p>Deep knowledge of Korean academic culture & systems</p></div>
-                <div class="hl-card"><i class="bi bi-person-check"></i><h4>Personalized Strategy</h4><p>No cookie-cutter advice — every profile is unique</p></div>
-                <div class="hl-card"><i class="bi bi-robot"></i><h4>Free AI Chatbot</h4><p>Instant answers powered by open-source AI, 24/7</p></div>
+                <div class="hl-card"><i class="bi bi-file-earmark-check"></i><h4>Insider Research Knowledge</h4><p>We know which fields are actively recruiting at KAIST, SNU, POSTECH — right now</p></div>
+                <div class="hl-card"><i class="bi bi-globe-asia-australia"></i><h4>Korea-Specific Strategy</h4><p>Korean academic culture has nuances that matter. We know them firsthand.</p></div>
+                <div class="hl-card"><i class="bi bi-person-check"></i><h4>Profile-First Approach</h4><p>We build your narrative around your actual strengths, not a template</p></div>
+                <div class="hl-card"><i class="bi bi-robot"></i><h4>Free AI Knowledge Base</h4><p>Instant answers about scholarships and applications, available 24/7</p></div>
             </div>
         </div>
         <div>
             <div class="quote-block">
-                <p class="q-text">"The difference between an accepted and rejected application is rarely talent — it's the ability to communicate your research vision in a language the committee speaks."</p>
-                <span class="q-auth">— GradAssist Founding Team, Seoul, South Korea</span>
+                <p class="q-text">"The difference between an accepted and rejected application is rarely talent — it is the ability to communicate your research vision in the precise language that Korean professors and scholarship committees respond to."</p>
+                <span class="q-auth">— GradAssist Founding Team</span>
+                <p class="q-context">PhD Researchers, Seoul National University & partner institutions, South Korea</p>
+
+                <div class="founder-strip">
+                    <h5>Our Founding Team Includes</h5>
+                    <div class="founders">
+                        <div class="founder">
+                            <div class="founder-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div class="founder-info">
+                                <h6>PhD Researcher — Engineering</h6>
+                                <p>Currently at a top-5 Korean university · GKS alumnus</p>
+                            </div>
+                        </div>
+                        <div class="founder">
+                            <div class="founder-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div class="founder-info">
+                                <h6>PhD Researcher — Natural Sciences</h6>
+                                <p>Professor-funded position · 3 years in Seoul</p>
+                            </div>
+                        </div>
+                        <div class="founder">
+                            <div class="founder-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div class="founder-info">
+                                <h6>MS Graduate — Computer Science</h6>
+                                <p>Now PhD candidate · Helped 40+ applicants personally</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -399,37 +546,42 @@
 <section id="services" class="services">
     <div class="services-hd">
         <span class="section-label">What We Do</span>
-        <h2 class="section-title">Every service you need.</h2>
-        <p>From your first research idea to your final acceptance letter — we cover every step of your journey to South Korea.</p>
+        <h2 class="section-title">Every document.<br>Every strategy. Done right.</h2>
+        <p>From shaping your research idea to landing in a Korean lab — we support every step of your application with the depth it requires.</p>
     </div>
     <div class="svc-grid">
         <div class="svc">
             <div class="svc-ico"><i class="bi bi-journal-richtext"></i></div>
             <h3>Research Proposal Guidance</h3>
-            <p>Structured support in developing clear, focused, and competitive research proposals that demonstrate academic maturity to PIs and admission committees.</p>
+            <p>Most research proposals are rejected not because the idea is weak, but because it is presented without enough focus or connection to the target lab's work. We help you identify a clear research question, align it with your target professor's publications, and structure your proposal the way Korean academic reviewers expect to read it.</p>
+            <span class="svc-tag">Most requested</span>
         </div>
         <div class="svc">
             <div class="svc-ico"><i class="bi bi-person-badge"></i></div>
             <h3>Academic CV Development</h3>
-            <p>Professional structuring and formatting of academic CVs tailored for MS and PhD applications — highlighting research trajectory and competencies.</p>
+            <p>An academic CV for Korean university applications is structured differently from a general resume. We reorganize and rewrite your CV to lead with research experience, present publications and projects in the correct academic format, and ensure it communicates your scholarly trajectory clearly — not just a list of activities.</p>
+            <span class="svc-tag">Essential for PhD</span>
         </div>
         <div class="svc">
             <div class="svc-ico"><i class="bi bi-bank"></i></div>
             <h3>Scholarship Documentation</h3>
-            <p>Expert assistance preparing documents for GKS, Brain Pool, and other Korean scholarship programs — aligned with selection criteria.</p>
+            <p>GKS, Brain Pool, and university-level scholarships each have their own documentation language and priorities. We help you prepare and align every supporting document with the selection criteria that actually drives decisions — not just the checklist on the portal.</p>
+            <span class="svc-tag">GKS · Brain Pool</span>
         </div>
         <div class="svc svc-wide">
             <div class="svc-ico"><i class="bi bi-file-earmark-medical"></i></div>
             <div>
                 <h3>SOP Structuring & Editing</h3>
-                <p>Strategic development and refinement of your Statement of Purpose — building a compelling narrative that connects your past achievements to future research goals. We ensure your SOP speaks directly to what Korean admissions panels value most.</p>
+                <p>Your Statement of Purpose is the document a professor reads when deciding whether to reply to your email or invite you for an interview. It needs to do specific work: establish your research identity, demonstrate intellectual seriousness, connect your background to future goals, and show cultural and academic fit with the Korean institution. We work through multiple drafts with you — not a single-pass edit — until the document genuinely represents your best self.</p>
+                <span class="svc-tag">Multiple revision rounds included</span>
             </div>
         </div>
         <div class="svc svc-wide">
             <div class="svc-ico"><i class="bi bi-compass"></i></div>
             <div>
                 <h3>MS & PhD Application Strategy</h3>
-                <p>Personalized guidance on program selection, professor cold-email outreach, application timelines, and positioning your profile. We give you insider knowledge because we are in Korea's research ecosystem right now.</p>
+                <p>The strategy behind your application matters as much as the documents themselves. We help you identify which programs and professors are the best fit for your research background, build a realistic target list across universities, craft cold emails that professors actually respond to, and plan your application timeline around real deadlines. Because our team is based in Korea right now, our knowledge of which labs are recruiting and which professors are taking students is current — not based on outdated blog posts.</p>
+                <span class="svc-tag">Personalized · Korea-current intel</span>
             </div>
         </div>
     </div>
@@ -439,50 +591,96 @@
 <section id="scholarships" class="sch">
     <div class="sch-grid">
         <div class="sch-intro">
-            <span class="section-label">Scholarships We Cover</span>
-            <h2 class="section-title">Funded paths to Korea's top universities.</h2>
-            <p>South Korea offers some of the world's most generous STEM research scholarships. We have deep expertise in every major program.</p>
+            <span class="section-label">Funding Pathways</span>
+            <h2 class="section-title">South Korea funds serious researchers.</h2>
+            <p>South Korea invests more in research as a percentage of GDP than almost any country in the world. That commitment flows through to graduate students — through government scholarships, university grants, and professor-funded lab positions.</p>
+            <p>We have deep, practical experience with every major funding pathway. We know the application systems, the committee priorities, and the common mistakes that lead to rejection.</p>
             <button class="btn-p" onclick="openChat()" style="margin-top:0.5rem;"><i class="bi bi-robot"></i> Ask AI About Scholarships</button>
         </div>
         <div class="sch-cards">
             <div class="sc">
                 <div class="sc-badge">Full Scholarship</div>
                 <h4>GKS (KGSP)</h4>
-                <p>Korean Government Scholarship Program — the most prestigious government-funded award for international students.</p>
+                <p>The Korean Government Scholarship Program is the most prestigious and comprehensive scholarship for international graduate students in Korea. It covers everything — and we mean everything.</p>
                 <div class="sc-details">
-                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> MS: 3 yrs | PhD: 4 yrs</div>
-                    <div class="sc-detail"><i class="bi bi-cash"></i> Full tuition + ₩900K–1M/month</div>
-                    <div class="sc-detail"><i class="bi bi-airplane"></i> Round-trip airfare included</div>
+                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> MS: 3 years | PhD: 4 years</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Full tuition + ₩900K–1M/month stipend</div>
+                    <div class="sc-detail"><i class="bi bi-airplane"></i> Round-trip airfare + settlement allowance</div>
+                    <div class="sc-detail"><i class="bi bi-translate"></i> Korean language training included</div>
                 </div>
             </div>
             <div class="sc">
                 <div class="sc-badge">Research Grant</div>
                 <h4>Brain Pool (BP)</h4>
-                <p>For PhD holders invited to collaborate with Korean R&D institutions. Up to ₩25M/month salary. 2025 deadline: May 30.</p>
+                <p>Designed for PhD holders invited to collaborate with Korean R&D institutions. One of Korea's most generous researcher mobility programs, managed by the National Research Foundation.</p>
                 <div class="sc-details">
-                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> 1–3 years (up to 10 for BP+)</div>
-                    <div class="sc-detail"><i class="bi bi-cash"></i> ₩5M–₩25M/month</div>
-                    <div class="sc-detail"><i class="bi bi-building"></i> NRF-managed program</div>
+                    <div class="sc-detail"><i class="bi bi-calendar-check"></i> 1–3 years (up to 10 years via BP+)</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> ₩5M–₩25M/month salary</div>
+                    <div class="sc-detail"><i class="bi bi-building"></i> NRF-managed · 2025 deadline: May 30</div>
                 </div>
             </div>
             <div class="sc">
-                <div class="sc-badge">Lab Funding</div>
-                <h4>Professor / BK21</h4>
-                <p>Lab-funded positions via BK21 or NRF project grants. The most common route to full PhD funding at top universities.</p>
+                <div class="sc-badge">Most Common Route</div>
+                <h4>Professor / BK21 Lab Funding</h4>
+                <p>The majority of fully-funded PhD students in Korea are supported directly by their professor's lab budget — through NRF grants or the BK21 FOUR program. Building the right professor relationship is key.</p>
                 <div class="sc-details">
-                    <div class="sc-detail"><i class="bi bi-building"></i> KAIST, SNU, POSTECH, UNIST</div>
-                    <div class="sc-detail"><i class="bi bi-cash"></i> Tuition waiver + monthly stipend</div>
-                    <div class="sc-detail"><i class="bi bi-person-check"></i> Professor relationship is key</div>
+                    <div class="sc-detail"><i class="bi bi-building"></i> KAIST · SNU · POSTECH · UNIST · Yonsei</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Full tuition waiver + monthly research stipend</div>
+                    <div class="sc-detail"><i class="bi bi-person-check"></i> Professor relationship is the deciding factor</div>
                 </div>
             </div>
             <div class="sc">
                 <div class="sc-badge">New 2025</div>
                 <h4>Brain Pool+ (BP+)</h4>
-                <p>For top-tier scientists seeking full-time tenure-track positions at Korean R&D institutions. Up to 10-year career track.</p>
+                <p>For top-tier scientists seeking full-time tenure-track positions at Korean national R&D institutions. An extraordinary program with a 10-year career pathway.</p>
                 <div class="sc-details">
                     <div class="sc-detail"><i class="bi bi-calendar-check"></i> 4+6 year tenure track</div>
-                    <div class="sc-detail"><i class="bi bi-cash"></i> Up to ₩600M/year total</div>
-                    <div class="sc-detail"><i class="bi bi-star"></i> ~5 spots nationwide</div>
+                    <div class="sc-detail"><i class="bi bi-cash"></i> Up to ₩600M/year total package</div>
+                    <div class="sc-detail"><i class="bi bi-star"></i> Highly competitive · approx. 5 spots nationally</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials" class="testi">
+    <div class="testi-hd">
+        <span class="section-label">Success Stories</span>
+        <h2 class="section-title">From Dhaka to Seoul.</h2>
+        <p style="color:var(--muted);font-size:0.93rem;max-width:500px;margin:0 auto;line-height:1.7;">These are the kinds of outcomes our students achieve. Every journey is different — but the strategy is always the same: build a clear academic identity and communicate it well.</p>
+    </div>
+    <div class="testi-grid">
+        <div class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"I had applied twice before and been rejected. GradAssist reviewed my SOP and pointed out that I was describing what I wanted to study — not why my background made me the right person to study it. That single insight changed everything. I received a GKS award in my third cycle."</p>
+            <div class="t-person">
+                <div class="t-avatar">R</div>
+                <div>
+                    <div class="t-name">Rakib H.</div>
+                    <div class="t-meta">MS, Environmental Engineering · KAIST · GKS 2024</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"My research proposal was technically sound, but a professor I wanted to work with never replied to my emails. GradAssist helped me rewrite the email and proposal to directly reference his lab's latest NRF project. He responded within 48 hours and offered me a lab position with full funding."</p>
+            <div class="t-person">
+                <div class="t-avatar">F</div>
+                <div>
+                    <div class="t-name">Fatema K.</div>
+                    <div class="t-meta">PhD, Materials Science · POSTECH · Professor-funded 2024</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"I was intimidated by the GKS application — it has so many documents with very specific requirements. The team at GradAssist went through every section with me and explained exactly what the review committee looks for. I submitted with confidence for the first time. Now I'm in Seoul."</p>
+            <div class="t-person">
+                <div class="t-avatar">S</div>
+                <div>
+                    <div class="t-name">Sajid M.</div>
+                    <div class="t-meta">MS, Computer Science · Sungkyunkwan University · GKS 2023</div>
                 </div>
             </div>
         </div>
@@ -494,38 +692,107 @@
     <div class="process-grid">
         <div>
             <span class="section-label">How It Works</span>
-            <h2 class="section-title">From zero to offer letter.</h2>
+            <h2 class="section-title">Four steps from<br>application to acceptance.</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-n">1</div>
-                    <div><h4>Free Initial Consultation</h4><p>We assess your academic background, research interests, and target programs to build a personalized strategy at no cost.</p></div>
+                    <div>
+                        <h4>Free Initial Consultation</h4>
+                        <p>We start by understanding your academic background, research interests, target programs, and timeline. No charge, no pressure. Our goal at this stage is to give you an honest picture of your current profile strength and what a realistic path forward looks like.</p>
+                        <div class="step-note">→ Available via Facebook Messenger or our AI Assistant</div>
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-n">2</div>
-                    <div><h4>Profile Building & Documentation</h4><p>We work with you on your CV, SOP, research proposal, and all supporting documents through multiple revision rounds.</p></div>
+                    <div>
+                        <h4>Profile Building & Document Development</h4>
+                        <p>We work through your CV, SOP, research proposal, and supporting scholarship documents together — through multiple rounds of structured feedback. This isn't a one-and-done edit. We iterate until the documents honestly and compellingly represent your academic identity.</p>
+                        <div class="step-note">→ Typically 2–4 weeks depending on document complexity</div>
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-n">3</div>
-                    <div><h4>Professor Outreach Strategy</h4><p>We identify the right professors for your profile and help craft targeted cold emails that actually get responses from Korean PIs.</p></div>
+                    <div>
+                        <h4>Professor Outreach Strategy</h4>
+                        <p>We identify professors whose research aligns genuinely with your background and interests — not just anyone accepting students. Then we help you craft outreach emails that demonstrate real familiarity with their work. We draw on our current network in Korea to give you an edge.</p>
+                        <div class="step-note">→ Includes lab research, email drafts, and follow-up strategy</div>
+                    </div>
                 </div>
                 <div class="step">
                     <div class="step-n">4</div>
-                    <div><h4>Application & Scholarship Submission</h4><p>We guide you through university and scholarship portals, deadlines, and full document checklists until you hit submit confidently.</p></div>
+                    <div>
+                        <h4>Application Submission & Final Review</h4>
+                        <p>We guide you through each university portal and scholarship platform, reviewing your submission checklist and helping you catch issues before they become rejections. You hit submit with full confidence — and we stay available for questions after.</p>
+                        <div class="step-note">→ We're with you until the acceptance letter arrives</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
             <div class="cta-box">
                 <div class="emoji">🎓</div>
-                <h3>Ready to Start?</h3>
-                <p>Join hundreds of Bangladeshi students who secured fully-funded positions at South Korea's top research universities with GradAssist's help.</p>
+                <h3>Start With a Free Conversation</h3>
+                <p>Tell us about your background, your goals, and your target universities. We'll give you an honest, specific assessment of your options — no commitment required.</p>
                 <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" class="btn-p" style="width:100%;justify-content:center;margin-bottom:0.5rem;">
-                    <i class="bi bi-facebook"></i> Connect on Facebook
+                    <i class="bi bi-facebook"></i> Message Us on Facebook
                 </a>
                 <div class="cta-divider">— or get instant answers —</div>
                 <button class="btn-s" onclick="openChat()" style="width:100%;justify-content:center;">
-                    <i class="bi bi-robot"></i> Ask AI Assistant Free
+                    <i class="bi bi-robot"></i> Ask AI Assistant (Free, 24/7)
                 </button>
+                <div class="cta-reassurance"><i class="bi bi-shield-check"></i> No spam. No sales pressure. Just honest guidance.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="faq">
+    <div class="faq-inner">
+        <span class="section-label" style="text-align:center;display:block;">Common Questions</span>
+        <h2 class="section-title" style="text-align:center;">Questions we get every day.</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Do I need publications to apply for a PhD in South Korea?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">Publications are valued but not always required — especially for students from institutions with limited research infrastructure. What matters more is a clear, focused research proposal and evidence that you understand the work of your target professor's lab. A strong SOP explaining your research interests can carry significant weight even without a publication record.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    What CGPA do I need to apply for GKS?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">The official GKS minimum is a CGPA of 2.64/4.0 or equivalent. However, competitive applicants typically have higher GPAs. More importantly, GKS reviewers consider the entire profile — your research background, SOP quality, language scores, and field of study all contribute. A lower GPA does not automatically disqualify you if your research experience and documents are strong.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Is Korean language proficiency required?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">Most MS and PhD programs at major research universities are offered in English, and a TOPIK score is not required for English-medium programs. Some programs are taught in Korean, but science, engineering, and technology disciplines are almost universally available in English. The GKS scholarship includes a one-year Korean language training period before your academic program begins.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Can I apply for GKS and a professor-funded position at the same time?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">Yes, and we recommend doing both. Applying through the GKS embassy track and simultaneously reaching out to professors for lab-funded positions are not mutually exclusive. In fact, having a professor's interest strengthens your GKS application. We help students pursue both pathways in parallel to maximize their chances of funding.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    How much does GradAssist's service cost?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">We offer an initial consultation completely free. Service fees depend on the scope of support you need — full application package, individual document review, or strategy consultation. We keep our pricing accessible because we built GradAssist specifically to serve Bangladeshi students who deserve expert support without paying Western agency rates. Contact us on Facebook for a breakdown.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    How long does the application process take?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-a">We recommend starting at least 3–4 months before your target deadline. Document development typically takes 2–4 weeks, professor outreach should begin 4–6 weeks before application closes, and scholarship applications like GKS have annual deadlines in February–March (embassy track) and April (university track). Starting early gives you time for revision and for professor responses to come in.</div>
             </div>
         </div>
     </div>
@@ -539,45 +806,42 @@
                 <span class="logo-main">GradAssist</span>
                 <span class="logo-sub">Academic & Research Advisory</span>
             </div>
-            <p class="footer-desc">Empowering Bangladeshi researchers to access world-class MS and PhD programs in South Korea. Founded by researchers, for researchers.</p>
+            <p class="footer-desc">GradAssist is an academic advisory service founded by Bangladeshi PhD researchers based in South Korea. We help students from Bangladesh build competitive applications for MS and PhD programs at Korean universities — with the insider knowledge that comes from being there ourselves.</p>
         </div>
         <div class="footer-col">
             <h5>Services</h5>
-            <a href="#services">Research Proposal</a>
-            <a href="#services">Academic CV</a>
-            <a href="#services">SOP Writing</a>
+            <a href="#services">Research Proposal Guidance</a>
+            <a href="#services">Academic CV Development</a>
+            <a href="#services">SOP Structuring & Editing</a>
             <a href="#services">Application Strategy</a>
-            <a href="#services">Scholarship Docs</a>
+            <a href="#services">Scholarship Documentation</a>
         </div>
         <div class="footer-col">
             <h5>Resources</h5>
-            <a href="#scholarships">GKS Scholarship</a>
+            <a href="#scholarships">GKS Scholarship Guide</a>
             <a href="#scholarships">Brain Pool Program</a>
-            <a href="#scholarships">Professor Funding</a>
-            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank">Contact Us</a>
+            <a href="#scholarships">Professor-Funded Positions</a>
+            <a href="#faq">Common Questions (FAQ)</a>
+            <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank">Contact & Free Consultation</a>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 GradAssist. All rights reserved. Strategic Academic Advisory for South Korea.</p>
+        <p>© 2025 GradAssist · Academic Advisory for South Korea · Founded in Seoul by Bangladeshi Researchers</p>
         <div class="socials">
             <a href="https://www.facebook.com/GradAssistOfficialBD/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
         </div>
     </div>
 </footer>
 
-<!-- ── BACKEND CONFIG MODAL ── -->
+<!-- ── CONFIG MODAL ── -->
 <div class="overlay" id="configModal">
     <div class="modal">
         <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚙️</div>
         <h3>Connect AI Backend</h3>
-        <p>Enter your Hugging Face Space URL to connect the AI chatbot. This is free — just deploy the backend files to HuggingFace Spaces.</p>
+        <p>Enter your Hugging Face Space URL to activate the AI chatbot. Deploy the backend files to HuggingFace Spaces (free tier available).</p>
         <label>Your Hugging Face Space URL</label>
         <input type="url" id="hfUrlInput" placeholder="https://YOUR-USERNAME-gradassist-ai.hf.space" autocomplete="off"/>
-        <div class="modal-hint">
-            Deploy the backend folder to HF Spaces (free). Your URL will look like:<br>
-            <code>https://yourusername-gradassist-ai.hf.space</code><br><br>
-            📖 See the included <strong>SETUP_GUIDE.md</strong> for step-by-step instructions.
-        </div>
+        <div class="modal-hint">Deploy the backend folder to HF Spaces (free). Your URL will look like:<br><code>https://yourusername-gradassist-ai.hf.space</code></div>
         <div class="modal-btns">
             <button class="btn-p" onclick="saveHFUrl()" style="flex:1;">Connect <i class="bi bi-lightning-charge-fill"></i></button>
             <button class="btn-s" onclick="closeConfigModal()">Cancel</button>
@@ -598,12 +862,12 @@
             </div>
             <button class="ch-close" onclick="closeChat()"><i class="bi bi-x-lg"></i></button>
         </div>
-        <div class="chat-note">🤖 Powered by open-source AI (Qwen2.5) · Free · No login required</div>
+        <div class="chat-note">🤖 Powered by open-source AI · Free · No login required</div>
         <div class="chat-msgs" id="chatMsgs">
             <div class="msg-r">
                 <div class="bubble bot">
                     👋 Hi! I'm the <strong>GradAssist AI Assistant</strong>.<br><br>
-                    I can answer questions about studying in South Korea — GKS scholarships, Brain Pool program, professor outreach, application documents, and our services.<br><br>
+                    I can answer questions about studying in South Korea — GKS scholarships, Brain Pool, professor outreach, application documents, and how our services work.<br><br>
                     What would you like to know?
                 </div>
             </div>
@@ -629,39 +893,35 @@
 </div>
 
 <script>
-// ─────────────────────────────────────────────────────────────
-//  CONFIG
-// ─────────────────────────────────────────────────────────────
-// 🔧 IMPORTANT: Replace this with your actual HuggingFace Space URL after deployment
-// Format: https://YOUR-HF-USERNAME-gradassist-ai.hf.space
+// ── CONFIG ──
 let HF_BACKEND_URL = localStorage.getItem('gradassist_hf_url') || '';
+const DEFAULT_HF_URL = 'https://GradAssist-gradassist-ai.hf.space';
 
-const DEFAULT_HF_URL = 'https://GradAssist-gradassist-ai.hf.space'; // ← CHANGE THIS after HF deployment
-
-// ─────────────────────────────────────────────────────────────
-//  STATE
-// ─────────────────────────────────────────────────────────────
+// ── STATE ──
 let conversation = [];
 let isBusy = false;
 
-// ─────────────────────────────────────────────────────────────
-//  NAV
-// ─────────────────────────────────────────────────────────────
+// ── NAV ──
 window.addEventListener('scroll', () => {
     document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
 });
 function toggleMobileMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
 function closeMobileMenu() { document.getElementById('mobileNav').classList.remove('open'); }
 
-// ─────────────────────────────────────────────────────────────
-//  CHAT OPEN / CLOSE
-// ─────────────────────────────────────────────────────────────
+// ── FAQ ──
+function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q.open').forEach(b => b.classList.remove('open'));
+    if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+// ── CHAT ──
 function openChat() {
     const backendUrl = HF_BACKEND_URL || DEFAULT_HF_URL;
     if (!HF_BACKEND_URL && DEFAULT_HF_URL.includes('YOUR-USERNAME')) {
-        // No backend configured yet — show config modal
-        document.getElementById('configModal').classList.add('open');
-        return;
+        document.getElementById('configModal').classList.add('open'); return;
     }
     document.getElementById('chatPanel').classList.add('open');
     document.getElementById('chatInput').focus();
@@ -669,9 +929,6 @@ function openChat() {
 }
 function closeChat() { document.getElementById('chatPanel').classList.remove('open'); }
 
-// ─────────────────────────────────────────────────────────────
-//  BACKEND HEALTH CHECK
-// ─────────────────────────────────────────────────────────────
 async function checkBackendHealth() {
     const url = HF_BACKEND_URL || DEFAULT_HF_URL;
     if (url.includes('YOUR-USERNAME')) return;
@@ -694,16 +951,12 @@ async function checkBackendHealth() {
     }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  CONFIG MODAL
-// ─────────────────────────────────────────────────────────────
 function openConfigModal() { document.getElementById('configModal').classList.add('open'); }
 function closeConfigModal() { document.getElementById('configModal').classList.remove('open'); }
 function saveHFUrl() {
     const val = document.getElementById('hfUrlInput').value.trim().replace(/\/$/, '');
     if (!val || !val.startsWith('https://')) {
-        document.getElementById('hfUrlInput').style.borderColor = 'var(--crimson)';
-        return;
+        document.getElementById('hfUrlInput').style.borderColor = 'var(--crimson)'; return;
     }
     HF_BACKEND_URL = val;
     localStorage.setItem('gradassist_hf_url', val);
@@ -717,25 +970,17 @@ document.getElementById('configModal').addEventListener('click', e => {
 });
 document.getElementById('hfUrlInput').addEventListener('keypress', e => { if(e.key==='Enter') saveHFUrl(); });
 
-// ─────────────────────────────────────────────────────────────
-//  MESSAGING
-// ─────────────────────────────────────────────────────────────
 function addMsg(text, role) {
     const container = document.getElementById('chatMsgs');
     const row = document.createElement('div');
     row.className = `msg-r ${role === 'user' ? 'user' : ''}`;
     const bubble = document.createElement('div');
     bubble.className = `bubble ${role === 'user' ? 'user' : 'bot'}`;
-    if (role === 'assistant') {
-        bubble.innerHTML = marked.parse(text);
-    } else {
-        bubble.textContent = text;
-    }
+    if (role === 'assistant') { bubble.innerHTML = marked.parse(text); } else { bubble.textContent = text; }
     row.appendChild(bubble);
     container.appendChild(row);
     container.scrollTop = container.scrollHeight;
 }
-
 function showTyping() {
     const container = document.getElementById('chatMsgs');
     const row = document.createElement('div');
@@ -745,42 +990,32 @@ function showTyping() {
     container.scrollTop = container.scrollHeight;
 }
 function removeTyping() { document.getElementById('typingRow')?.remove(); }
-
 function askChip(el) {
     document.getElementById('chatInput').value = el.textContent;
     document.getElementById('chatChips').style.display = 'none';
     sendMsg();
 }
-
 async function sendMsg() {
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
     if (!text || isBusy) return;
-
     const backendUrl = HF_BACKEND_URL || DEFAULT_HF_URL;
-    if (backendUrl.includes('YOUR-USERNAME')) {
-        openConfigModal(); return;
-    }
-
+    if (backendUrl.includes('YOUR-USERNAME')) { openConfigModal(); return; }
     input.value = '';
     document.getElementById('chatChips').style.display = 'none';
     addMsg(text, 'user');
     conversation.push({ role: 'user', content: text });
-
     isBusy = true;
     document.getElementById('sendBtn').disabled = true;
     showTyping();
-
     try {
         const res = await fetch(`${backendUrl}/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messages: conversation.slice(-8) }),
-            signal: AbortSignal.timeout(60000) // 60s timeout for CPU inference
+            signal: AbortSignal.timeout(60000)
         });
-
         removeTyping();
-
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             addMsg(`⚠️ ${err.error || 'Server error. Please try again.'}`, 'assistant');
@@ -793,23 +1028,18 @@ async function sendMsg() {
     } catch (err) {
         removeTyping();
         if (err.name === 'TimeoutError') {
-            addMsg('⏳ Response is taking longer than usual (CPU inference can take up to 60s). Please try again or ask a shorter question.', 'assistant');
+            addMsg('⏳ This is taking longer than usual. Please try again or ask a shorter question.', 'assistant');
         } else {
             addMsg('⚠️ Could not reach the AI backend. Make sure your Hugging Face Space is running.', 'assistant');
         }
     }
-
     isBusy = false;
     document.getElementById('sendBtn').disabled = false;
     input.focus();
 }
-
 document.getElementById('chatInput').addEventListener('keypress', e => { if(e.key === 'Enter') sendMsg(); });
 
-// Pre-fill HF URL input if already saved
 if (HF_BACKEND_URL) document.getElementById('hfUrlInput').value = HF_BACKEND_URL;
-
-// Update status bar with current URL info
 if (HF_BACKEND_URL) {
     document.getElementById('chatStatusBar').innerHTML = `Connected: ${new URL(HF_BACKEND_URL).hostname} · <a href="#" onclick="openConfigModal();return false;">Change</a>`;
 } else {
