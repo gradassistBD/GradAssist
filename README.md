@@ -11,7 +11,7 @@
 **Also serving:** International students worldwide (Nigeria, Pakistan, South Africa, and beyond)
 **Location:** Seoul, South Korea (team is physically based here, actively researching)
 **Facebook:** https://www.facebook.com/GradAssistOfficialBD/
-**Website:** https://gradassist.org
+**Website:** [https://gradassist.org](https://gradassistbd.github.io/GradAssist/)
 
 **Facebook Bio (254 characters — final approved version):**
 > GradAssist provides expert academic support for students pursuing fully-funded MS/PhD positions in South Korea. Founded by PhD researchers, we help you build strong CVs, SOPs, and professor outreach emails with clarity and strategy. 🌍 Free consultation.
