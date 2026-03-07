@@ -9,7 +9,7 @@
 **Founded by:** Bangladeshi PhD researchers currently based in South Korea
 **Primary market:** Students from Bangladesh
 **Also serving:** International students worldwide (Nigeria, Pakistan, South Africa, and beyond)
-**Location:** Seoul, South Korea (team is physically based here, actively researching)
+**Location:** Gwangju, South Korea (team is physically based here, actively researching)
 **Facebook:** https://www.facebook.com/GradAssistOfficialBD/
 **Website:** [https://gradassist.org](https://gradassistbd.github.io/GradAssist/)
 
