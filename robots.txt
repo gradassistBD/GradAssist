@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gradassistbd.github.io/GradAssist/sitemap.xml
